@@ -2,20 +2,18 @@
 #include <GLFW\glfw3.h>
 #include <stdio.h>
 
-Clock::Clock() {
+clock::clock() {
 	_lastTime = glfwGetTime();
 	_frames = 0;
 }
-Clock::~Clock() {
+clock::~clock() {
 }
-double Clock::tick() {
+void clock::tick() {
 	_currentTime = glfwGetTime();
 	_frames++;
-	double result;
 	if (_currentTime - _lastTime >= 1.0) {
-		result = double(_frames);
+		printf("%f frames/s\n", double(_frames));
 		_frames = 0;
 		_lastTime += 1.0;
 	}
-	return result;
 }

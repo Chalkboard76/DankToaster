@@ -1,10 +1,10 @@
 #pragma once
 
-class Clock {
+class clock {
 public:
-	Clock();
-	~Clock();
-	double tick();
+	clock();
+	~clock();
+	void tick();
 private:
 	double _lastTime;
 	double _currentTime;

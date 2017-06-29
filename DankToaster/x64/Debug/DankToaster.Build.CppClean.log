@@ -1,5 +1,6 @@
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\vc141.pdb
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\vc141.idb
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_shader.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_window.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\main.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_mat4.obj
@@ -7,6 +8,8 @@ c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_vec2.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_vec3.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_vec4.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\math.obj
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\clock.obj
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\file_utils.obj
 c:\users\jacob\files\projects\danktoaster\x64\debug\danktoaster.ilk
 c:\users\jacob\files\projects\danktoaster\x64\debug\danktoaster.exe
 c:\users\jacob\files\projects\danktoaster\x64\debug\danktoaster.pdb

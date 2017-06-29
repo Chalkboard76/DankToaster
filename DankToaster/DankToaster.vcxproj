@@ -25,6 +25,9 @@
     <ClInclude Include="Math\dank_vec3.h" />
     <ClInclude Include="Math\dank_vec4.h" />
     <ClInclude Include="Math\Math.h" />
+    <ClInclude Include="Utils\clock.h" />
+    <ClInclude Include="Utils\file_utils.h" />
+    <ClInclude Include="Utils\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics\dank_window.cpp" />
@@ -34,6 +37,8 @@
     <ClCompile Include="Math\dank_vec3.cpp" />
     <ClCompile Include="Math\dank_vec4.cpp" />
     <ClCompile Include="Math\Math.cpp" />
+    <ClCompile Include="Utils\clock.cpp" />
+    <ClCompile Include="Utils\file_utils.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

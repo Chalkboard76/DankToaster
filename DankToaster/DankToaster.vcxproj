@@ -53,6 +53,10 @@
     <None Include="Shaders\spriteShader.frag" />
     <None Include="Shaders\spriteShader.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Sheet1.png" />
+    <Image Include="Resources\Sheet2.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{241CDDCA-6999-4375-AD58-58D24D1FB84D}</ProjectGuid>

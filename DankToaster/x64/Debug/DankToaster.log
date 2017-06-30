@@ -1,3 +1,4 @@
-﻿  dank_texture.cpp
+﻿  main.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(52): warning C4244: 'argument': conversion from 'float' to 'GLuint', possible loss of data
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

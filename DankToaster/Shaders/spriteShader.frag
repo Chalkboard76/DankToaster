@@ -2,9 +2,15 @@
 
 out vec4 FragColor;
 
-in vec4 ourColor;
+in vec2 ourUV;
+in float ourTexID;
+
+uniform sampler2D our_textures[32];
 
 void main()
 {
-	FragColor = ourColor;
+	vec4 texColor;
+	int tid = int(ourTexID);
+	texColor = texture(our_textures[0], ourUV);
+	FragColor = texColor;
 }

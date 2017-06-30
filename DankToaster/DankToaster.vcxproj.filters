@@ -103,4 +103,12 @@
     <None Include="Shaders\spriteShader.vert" />
     <None Include="Shaders\spriteShader.frag" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Sheet1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Sheet2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

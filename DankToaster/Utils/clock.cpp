@@ -1,14 +1,14 @@
-#include "Clock.h"
+#include "clock.h"
 #include <GLFW\glfw3.h>
 #include <stdio.h>
 
-clock::clock() {
+dank_clock::dank_clock() {
 	_lastTime = glfwGetTime();
 	_frames = 0;
 }
-clock::~clock() {
+dank_clock::~dank_clock() {
 }
-void clock::tick() {
+void dank_clock::tick() {
 	_currentTime = glfwGetTime();
 	_frames++;
 	if (_currentTime - _lastTime >= 1.0) {

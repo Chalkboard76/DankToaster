@@ -19,12 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graphics\dank_batch.h" />
+    <ClInclude Include="Graphics\dank_batch_renderer.h" />
     <ClInclude Include="Graphics\dank_shader.h" />
     <ClInclude Include="Graphics\dank_sprite.h" />
     <ClInclude Include="Graphics\dank_texture.h" />
     <ClInclude Include="Graphics\dank_texture_sheet.h" />
     <ClInclude Include="Graphics\dank_vertex.h" />
     <ClInclude Include="Graphics\dank_window.h" />
+    <ClInclude Include="Graphics\dank_renderable.h" />
     <ClInclude Include="Math\dank_mat4.h" />
     <ClInclude Include="Math\dank_vec2.h" />
     <ClInclude Include="Math\dank_vec3.h" />
@@ -35,6 +38,8 @@
     <ClInclude Include="Utils\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Graphics\dank_batch.cpp" />
+    <ClCompile Include="Graphics\dank_batch_renderer.cpp" />
     <ClCompile Include="Graphics\dank_shader.cpp" />
     <ClCompile Include="Graphics\dank_sprite.cpp" />
     <ClCompile Include="Graphics\dank_texture.cpp" />
@@ -56,6 +61,40 @@
   <ItemGroup>
     <Image Include="Resources\Sheet1.png" />
     <Image Include="Resources\Sheet2.png" />
+    <Image Include="Resources\test\tex1.png" />
+    <Image Include="Resources\test\tex10.png" />
+    <Image Include="Resources\test\tex11.png" />
+    <Image Include="Resources\test\tex12.png" />
+    <Image Include="Resources\test\tex13.png" />
+    <Image Include="Resources\test\tex14.png" />
+    <Image Include="Resources\test\tex15.png" />
+    <Image Include="Resources\test\tex16.png" />
+    <Image Include="Resources\test\tex17.png" />
+    <Image Include="Resources\test\tex18.png" />
+    <Image Include="Resources\test\tex19.png" />
+    <Image Include="Resources\test\tex2.png" />
+    <Image Include="Resources\test\tex20.png" />
+    <Image Include="Resources\test\tex21.png" />
+    <Image Include="Resources\test\tex22.png" />
+    <Image Include="Resources\test\tex23.png" />
+    <Image Include="Resources\test\tex24.png" />
+    <Image Include="Resources\test\tex25.png" />
+    <Image Include="Resources\test\tex26.png" />
+    <Image Include="Resources\test\tex27.png" />
+    <Image Include="Resources\test\tex28.png" />
+    <Image Include="Resources\test\tex29.png" />
+    <Image Include="Resources\test\tex3.png" />
+    <Image Include="Resources\test\tex30.png" />
+    <Image Include="Resources\test\tex31.png" />
+    <Image Include="Resources\test\tex32.png" />
+    <Image Include="Resources\test\tex33.png" />
+    <Image Include="Resources\test\tex34.png" />
+    <Image Include="Resources\test\tex4.png" />
+    <Image Include="Resources\test\tex5.png" />
+    <Image Include="Resources\test\tex6.png" />
+    <Image Include="Resources\test\tex7.png" />
+    <Image Include="Resources\test\tex8.png" />
+    <Image Include="Resources\test\tex9.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

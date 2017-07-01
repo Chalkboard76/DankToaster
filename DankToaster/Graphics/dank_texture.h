@@ -8,7 +8,7 @@ struct dank_texture {
 	unsigned int texID;
 	dank_vec2 UV;
 	float width, height;
-
+	dank_texture();
 	dank_texture(const dank_texture_sheet& sheet, dank_vec2 coord, float width, float height);
 	~dank_texture();
 };

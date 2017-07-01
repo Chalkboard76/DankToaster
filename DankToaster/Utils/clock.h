@@ -1,9 +1,9 @@
 #pragma once
 
-class clock {
+class dank_clock {
 public:
-	clock();
-	~clock();
+	dank_clock();
+	~dank_clock();
 	void tick();
 private:
 	double _lastTime;

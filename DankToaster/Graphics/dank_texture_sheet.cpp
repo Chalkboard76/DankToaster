@@ -5,10 +5,12 @@
 #define STB_IMAGE_IMPLEMENTATION    
 #include "Utils/stb_image.h"
 
+dank_texture_sheet::dank_texture_sheet() {
+}
 dank_texture_sheet::dank_texture_sheet(const std::string& path) {
 	int width, height, numChannels;
-	glGenTextures(1, &texID);
-	glBindTexture(GL_TEXTURE_2D, texID);
+	glGenTextures(1, &tex_ID);
+	glBindTexture(GL_TEXTURE_2D, tex_ID);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);

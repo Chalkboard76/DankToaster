@@ -7,5 +7,5 @@
 struct dank_vertex {
 	dank_vec3 position;
 	dank_vec2 UV;
-	float texID;
+	float tex_unit;
 };

@@ -3,8 +3,9 @@
 #include <string>
 
 struct dank_texture_sheet {
-	unsigned int texID;
+	unsigned int tex_ID;
 
+	dank_texture_sheet();
 	dank_texture_sheet(const std::string& path);
 	~dank_texture_sheet();
 };

@@ -5,7 +5,7 @@
 #include "dank_texture.h"
 
 struct dank_vertex {
-	dank_vec3 position;
-	dank_vec2 UV;
-	float tex_unit;
+	dank_vec3	position;
+	dank_vec2	UV;
+	float		tex_unit;
 };

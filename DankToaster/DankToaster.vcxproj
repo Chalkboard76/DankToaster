@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClInclude Include="Graphics\dank_batch.h" />
     <ClInclude Include="Graphics\dank_batch_renderer.h" />
+    <ClInclude Include="Graphics\dank_character.h" />
+    <ClInclude Include="Graphics\dank_character_set.h" />
+    <ClInclude Include="Graphics\dank_glyph.h" />
     <ClInclude Include="Graphics\dank_shader.h" />
     <ClInclude Include="Graphics\dank_sprite.h" />
     <ClInclude Include="Graphics\dank_texture.h" />
@@ -40,6 +43,8 @@
   <ItemGroup>
     <ClCompile Include="Graphics\dank_batch.cpp" />
     <ClCompile Include="Graphics\dank_batch_renderer.cpp" />
+    <ClCompile Include="Graphics\dank_character_set.cpp" />
+    <ClCompile Include="Graphics\dank_glyph.cpp" />
     <ClCompile Include="Graphics\dank_shader.cpp" />
     <ClCompile Include="Graphics\dank_sprite.cpp" />
     <ClCompile Include="Graphics\dank_texture.cpp" />
@@ -156,8 +161,8 @@
     <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2015;$(SolutionDir)Dependencies\GLEW\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)DankToaster;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2015;$(SolutionDir)Dependencies\GLEW\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)DankToaster;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\Freetype\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2015;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\Freetype\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)DankToaster;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(IncludePath)</IncludePath>
@@ -183,7 +188,7 @@
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;freetype28MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

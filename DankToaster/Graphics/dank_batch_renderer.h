@@ -5,7 +5,7 @@
 #include "dank_batch.h"
 
 struct dank_batch_renderer {
-	#define MAX_RENDERABLES		10000
+	#define MAX_RENDERABLES		5000
 	#define VERTEX_SIZE			sizeof(dank_vertex)
 	#define RENDERABLE_SIZE		VERTEX_SIZE * 4
 	#define BUFFER_SIZE			RENDERABLE_SIZE * MAX_RENDERABLES

@@ -54,7 +54,7 @@ void dank_batch_renderer::submit(dank_renderable* renderables, int count) {
 
 void dank_batch_renderer::render() {
 	for (int i = 0; i < 4; i++) {
-		if (!batches[i].map.empty()) {
+		if (!batches[i].empty()) {
 			render_batch(batches[i]);
 			batches[i].clear();
 		}
@@ -74,9 +74,10 @@ void dank_batch_renderer::render_batch(dank_batch& batch) {
 		}
 	}
 
-	for (std::unordered_map<unsigned int, float>::iterator it = batch.map.begin(); it != batch.map.end(); it++) {
-		glActiveTexture(GL_TEXTURE0 + it->second);
-		glBindTexture(GL_TEXTURE_2D, it->first);
+	for (int i = 0; i < batch.indices.size(); i++) {
+		glActiveTexture(GL_TEXTURE0 + batch.map[batch.indices[i]]);
+		glBindTexture(GL_TEXTURE_2D, batch.indices[i]);
+		batch.map[batch.indices[i]] = -1.0f;
 	}
 
 	glUnmapBuffer(GL_ARRAY_BUFFER);

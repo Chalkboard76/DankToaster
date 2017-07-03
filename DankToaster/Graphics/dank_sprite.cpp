@@ -3,7 +3,7 @@
 dank_sprite::dank_sprite() {
 }
 dank_sprite::dank_sprite(float xcoord, float ycoord, float width, float height, dank_texture& texture) {
-	tex_ID = texture.texID;
+	tex_ID = texture.tex_ID;
 
 	vertices[0].position = dank_vec3(xcoord, ycoord, 0);
 	vertices[0].UV = dank_vec2(texture.UV.x, texture.UV.y);

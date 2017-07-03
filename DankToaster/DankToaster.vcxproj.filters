@@ -72,7 +72,10 @@
     <ClInclude Include="Graphics\dank_glyph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\dank_character_set.h">
+    <ClInclude Include="Graphics\dank_label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\dank_text_renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -125,13 +128,18 @@
     <ClCompile Include="Graphics\dank_glyph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\dank_character_set.cpp">
+    <ClCompile Include="Graphics\dank_label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\dank_text_renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\spriteShader.vert" />
     <None Include="Shaders\spriteShader.frag" />
+    <None Include="Shaders\textShader.frag" />
+    <None Include="Shaders\textShader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sheet1.png">

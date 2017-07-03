@@ -5,7 +5,7 @@
 #include "Math/dank_vec2.h"
 
 struct dank_texture {
-	unsigned int texID;
+	unsigned int tex_ID;
 	dank_vec2 UV;
 	float width, height;
 	dank_texture();

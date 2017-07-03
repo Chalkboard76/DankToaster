@@ -22,12 +22,13 @@
     <ClInclude Include="Graphics\dank_batch.h" />
     <ClInclude Include="Graphics\dank_batch_renderer.h" />
     <ClInclude Include="Graphics\dank_character.h" />
-    <ClInclude Include="Graphics\dank_character_set.h" />
     <ClInclude Include="Graphics\dank_glyph.h" />
+    <ClInclude Include="Graphics\dank_label.h" />
     <ClInclude Include="Graphics\dank_shader.h" />
     <ClInclude Include="Graphics\dank_sprite.h" />
     <ClInclude Include="Graphics\dank_texture.h" />
     <ClInclude Include="Graphics\dank_texture_sheet.h" />
+    <ClInclude Include="Graphics\dank_text_renderer.h" />
     <ClInclude Include="Graphics\dank_vertex.h" />
     <ClInclude Include="Graphics\dank_window.h" />
     <ClInclude Include="Graphics\dank_renderable.h" />
@@ -43,12 +44,13 @@
   <ItemGroup>
     <ClCompile Include="Graphics\dank_batch.cpp" />
     <ClCompile Include="Graphics\dank_batch_renderer.cpp" />
-    <ClCompile Include="Graphics\dank_character_set.cpp" />
     <ClCompile Include="Graphics\dank_glyph.cpp" />
+    <ClCompile Include="Graphics\dank_label.cpp" />
     <ClCompile Include="Graphics\dank_shader.cpp" />
     <ClCompile Include="Graphics\dank_sprite.cpp" />
     <ClCompile Include="Graphics\dank_texture.cpp" />
     <ClCompile Include="Graphics\dank_texture_sheet.cpp" />
+    <ClCompile Include="Graphics\dank_text_renderer.cpp" />
     <ClCompile Include="Graphics\dank_window.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math\dank_mat4.cpp" />
@@ -62,6 +64,8 @@
   <ItemGroup>
     <None Include="Shaders\spriteShader.frag" />
     <None Include="Shaders\spriteShader.vert" />
+    <None Include="Shaders\textShader.frag" />
+    <None Include="Shaders\textShader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sheet1.png" />

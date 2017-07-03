@@ -1,1 +1,15 @@
-﻿  DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Release\DankToaster.exe
+﻿  dank_batch.cpp
+  dank_batch_renderer.cpp
+Graphics\dank_batch_renderer.cpp(78): warning C4244: 'argument': conversion from 'float' to 'GLenum', possible loss of data
+  dank_glyph.cpp
+Graphics\dank_glyph.cpp(15): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+Graphics\dank_glyph.cpp(17): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+Graphics\dank_glyph.cpp(19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+Graphics\dank_glyph.cpp(21): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  dank_label.cpp
+  dank_sprite.cpp
+  dank_text_renderer.cpp
+Graphics\dank_text_renderer.cpp(2): fatal error C1083: Cannot open include file: 'ft2build.h': No such file or directory
+  dank_texture.cpp
+  main.cpp
+main.cpp(59): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data

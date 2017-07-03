@@ -5,6 +5,12 @@ dank_shader::dank_shader() {
 }
 
 dank_shader::dank_shader(const char* vert, const char* frag) {
+	init(vert, frag);
+}
+dank_shader::~dank_shader() {
+	glDeleteProgram(_programID);
+}
+void dank_shader::init(const char* vert, const char* frag) {
 	std::string vertAsString = fileToString(vert);
 	const char* vertAsStringP = vertAsString.c_str();
 	GLuint vertID = glCreateShader(GL_VERTEX_SHADER);
@@ -43,9 +49,7 @@ dank_shader::dank_shader(const char* vert, const char* frag) {
 	glDeleteShader(vertID);
 	glDeleteShader(fragID);
 }
-dank_shader::~dank_shader() {
-	glDeleteProgram(_programID);
-}
+
 void dank_shader::enable() {
 	glUseProgram(_programID);
 }
@@ -62,4 +66,7 @@ void dank_shader::setUniform1fv(char* name, float* data, int count) {
 }
 void dank_shader::setUniform1v(char* name, int* data, int count) {
 	glUniform1iv(glGetUniformLocation(_programID, name), count, data);
+}
+void dank_shader::setUniform1i(char* name, int data) {
+	glUniform1i(glGetUniformLocation(_programID, name), data);
 }

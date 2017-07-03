@@ -13,7 +13,10 @@ int main() {
 	dank_clock c;
 	dank_window window(1024, 576, "Testtttt");
 	dank_shader shader();
-	dank_batch_renderer renderer(16.0f, 9.0f);	
+	dank_batch_renderer renderer(16.0f, 9.0f);
+	dank_text_renderer text_renderer(16.0, 9.0f);
+	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 1);
+
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
 		dank_texture_sheet("Resources/test/tex2.png"),
@@ -69,8 +72,9 @@ int main() {
 	while (window.open()) {
 		window.clear();
 		c.tick();
-		renderer.submit(sprites, sprite_count);
-		renderer.render();
+		//renderer.submit(sprites, sprite_count);
+		//renderer.render();
+		text_renderer.render_text("POOP", 1, 1, 1, dank_vec3(1,0,1));
 		window.update();
 	}
 

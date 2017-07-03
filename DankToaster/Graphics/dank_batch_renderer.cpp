@@ -60,6 +60,7 @@ void dank_batch_renderer::submit(dank_renderable* renderables, int count) {
 }
 
 void dank_batch_renderer::render() {
+	shader.enable();
 	for (int i = 0; i < 4; i++) {
 		if (!batches[i].empty()) {
 			render_batch(batches[i]);

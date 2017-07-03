@@ -251,4 +251,14 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\fonts\consola.ttf" />
+    <Font Include="Resources\fonts\consolab.ttf" />
+    <Font Include="Resources\fonts\consolai.ttf" />
+    <Font Include="Resources\fonts\consolaz.ttf" />
+    <Font Include="Resources\fonts\snow.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\DankToaster.log" />
+  </ItemGroup>
 </Project>

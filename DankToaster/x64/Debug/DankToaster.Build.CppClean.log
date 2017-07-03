@@ -8,6 +8,7 @@ c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_shader.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_sprite.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_texture.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_texture_sheet.obj
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_text_renderer.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_window.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\main.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_mat4.obj
@@ -17,6 +18,14 @@ c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\dank_vec4.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\math.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\clock.obj
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\file_utils.obj
+c:\users\jacob\files\projects\danktoaster\x64\debug\danktoaster.pdb
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\cl.command.1.tlog
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\cl.read.1.tlog
 c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\cl.write.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link-cvtres.read.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link-cvtres.write.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link-rc.read.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link-rc.write.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link.command.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link.read.1.tlog
+c:\users\jacob\files\projects\danktoaster\danktoaster\x64\debug\danktoaster.tlog\link.write.1.tlog

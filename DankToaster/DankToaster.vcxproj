@@ -105,6 +105,16 @@
     <Image Include="Resources\test\tex8.png" />
     <Image Include="Resources\test\tex9.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\fonts\consola.ttf" />
+    <Font Include="Resources\fonts\consolab.ttf" />
+    <Font Include="Resources\fonts\consolai.ttf" />
+    <Font Include="Resources\fonts\consolaz.ttf" />
+    <Font Include="Resources\fonts\snow.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\DankToaster.log" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{241CDDCA-6999-4375-AD58-58D24D1FB84D}</ProjectGuid>
@@ -193,6 +203,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;freetype28MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Jacob\files\dl\freetype-2.5.3\objs\win32\vc2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

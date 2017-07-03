@@ -19,6 +19,10 @@ dank_text_renderer::dank_text_renderer(int width, int height) {
 	glBindVertexArray(0);
 }
 
+dank_text_renderer::~dank_text_renderer() {
+
+}
+
 void dank_text_renderer::load_font(std::string font, int font_size) {
 	characters.clear();
 	FT_Library ft;
@@ -69,9 +73,10 @@ void render_label(dank_label label) {
 }
 
 void dank_text_renderer::render_text(std::string text, int x, int y, int scale, dank_vec3 color) {
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	shader.enable();
 	shader.setUniform3f("textColor", color);
-	glActiveTexture(GL_TEXTURE0);
 	glBindVertexArray(_VAO);
 
 	std::string::const_iterator c;
@@ -93,6 +98,7 @@ void dank_text_renderer::render_text(std::string text, int x, int y, int scale, 
 			{ xpos + w, ypos + h,   1.0, 1.0 },
 			{ xpos + w, ypos,       1.0, 0.0 }
 		};
+		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, ch.tex_ID);
 		glBindBuffer(GL_ARRAY_BUFFER, _VBO);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);

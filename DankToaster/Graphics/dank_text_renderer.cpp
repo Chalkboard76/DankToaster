@@ -4,6 +4,7 @@
 
 dank_text_renderer::dank_text_renderer(int width, int height) {
 	shader.init("Shaders/textShader.vert", "Shaders/textShader.frag");
+	shader.enable();
 	shader.setUniformMat4("projection", orthographic(0.0f, width, 0.0f, height, 0.0f, 2.0f));
 	shader.setUniform1i("text", 0);
 
@@ -54,13 +55,52 @@ void dank_text_renderer::load_font(std::string font, int font_size) {
 	FT_Done_FreeType(ft);
 }
 
-//dank_label* dank_text_renderer::generate_label(std::string text, int x, int y, int z, int scale, dank_vec4 color) {
-//	dank_label* result;
-//	result->color = color;
-//	for (std::string::const_iterator c = text.begin(); c != text.end(); c++) {
-//		dank_character ch = characters[*c];
-//		result->glyphs.push_back(dank_glyph(x, y, z, scale, ch, characters['H']));
-//		x += (ch.advance >> 6) * scale;
-//	}
-//	return result;
-//}
+void dank_text_renderer::generate_label(dank_label* label, std::string text, int x, int y, int z, int scale, dank_vec4 color) {
+	label->color = color;
+	for (std::string::const_iterator c = text.begin(); c != text.end(); c++) {
+		dank_character ch = characters[*c];
+		label->glyphs.push_back(dank_glyph(x, y, z, scale, ch, characters['H']));
+		x += (ch.advance >> 6) * scale;
+	}
+}
+
+void render_label(dank_label label) {
+
+}
+
+void dank_text_renderer::render_text(std::string text, int x, int y, int scale, dank_vec3 color) {
+	shader.enable();
+	shader.setUniform3f("textColor", color);
+	glActiveTexture(GL_TEXTURE0);
+	glBindVertexArray(_VAO);
+
+	std::string::const_iterator c;
+	for (c = text.begin(); c != text.end(); c++)
+	{
+		dank_character ch = characters[*c];
+
+		GLfloat xpos = x + ch.bearing.x * scale;
+		GLfloat ypos = y + (characters['H'].bearing.y - ch.bearing.y) * scale;
+
+		GLfloat w = ch.size.x * scale;
+		GLfloat h = ch.size.y * scale;
+		GLfloat vertices[6][4] = {
+			{ xpos,     ypos + h,   0.0, 1.0 },
+			{ xpos + w, ypos,       1.0, 0.0 },
+			{ xpos,     ypos,       0.0, 0.0 },
+
+			{ xpos,     ypos + h,   0.0, 1.0 },
+			{ xpos + w, ypos + h,   1.0, 1.0 },
+			{ xpos + w, ypos,       1.0, 0.0 }
+		};
+		glBindTexture(GL_TEXTURE_2D, ch.tex_ID);
+		glBindBuffer(GL_ARRAY_BUFFER, _VBO);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0); 
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+		x += (ch.advance >> 6) * scale;
+	}
+	glBindVertexArray(0);
+	glBindTexture(GL_TEXTURE_2D, 0);
+}

@@ -18,5 +18,6 @@ public:
 	void setUniformMat4(char* name, dank_mat4 matrix);
 	void setUniform1fv(char* name, float* data, int count);
 	void setUniform1v(char* name, int* data, int count);
-	void setUniform1i(char* nam, int data);
+	void setUniform1i(char* name, int data);
+	void setUniform3f(char* name, dank_vec3 data);
 };

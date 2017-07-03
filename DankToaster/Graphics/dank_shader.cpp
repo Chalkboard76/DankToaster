@@ -70,3 +70,7 @@ void dank_shader::setUniform1v(char* name, int* data, int count) {
 void dank_shader::setUniform1i(char* name, int data) {
 	glUniform1i(glGetUniformLocation(_programID, name), data);
 }
+
+void dank_shader::setUniform3f(char* name, dank_vec3 data) {
+	glUniform3f(glGetUniformLocation(_programID, name), data.x, data.y, data.z);
+}

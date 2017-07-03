@@ -7,13 +7,13 @@
 #include <unordered_map>
 #include <time.h>
 #include "Graphics\dank_batch_renderer.h"
+#include "Graphics\dank_text_renderer.h"
 
 int main() {
 	dank_clock c;
 	dank_window window(1024, 576, "Testtttt");
-	dank_shader shader("Shaders/spriteShader.vert", "Shaders/spriteShader.frag");
-	dank_batch_renderer renderer;
-	
+	dank_shader shader();
+	dank_batch_renderer renderer(16.0f, 9.0f);	
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
 		dank_texture_sheet("Resources/test/tex2.png"),
@@ -64,11 +64,6 @@ int main() {
 		}
 	}
 	
-	shader.enable();
-	int texIndices[32] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 };
-	dank_mat4 projection = orthographic(0.0f, 16.0f, 0.0f, 9.0f, 0.0f, 2.0f);
-	shader.setUniformMat4("projection", projection);
-	shader.setUniform1v("our_textures", texIndices, 32);
 	glClearColor(0, 1, 1, 1);
 
 	while (window.open()) {

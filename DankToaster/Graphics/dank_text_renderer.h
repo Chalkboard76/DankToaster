@@ -27,8 +27,8 @@ public:
 	~dank_text_renderer();
 	
 	void load_font(std::string font, int font_size);
-	void render_text(std::string text, int x, int y, int scale, dank_vec4 color);
-	dank_label* generate_label(std::string text, int x, int y, int z, int scale, dank_vec4 color);
+	void generate_label(dank_label* label, std::string text, int x, int y, int z, int scale, dank_vec4 color);
 	void render_label(dank_label label);
+	void render_text(std::string text, int x, int y, int scale, dank_vec3 color);
 
 };

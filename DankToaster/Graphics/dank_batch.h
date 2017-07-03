@@ -5,7 +5,7 @@
 #include <unordered_map>
 
 struct dank_batch {
-	const static short max_map_size = 500;
+	const static short max_map_size = 100;
 	const static short sheet_capacity = 32;
 	float	num_sheets;
 	float	map[max_map_size];

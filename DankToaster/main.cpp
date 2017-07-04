@@ -14,8 +14,8 @@ int main() {
 	dank_window window(1024, 576, "Testtttt");
 	dank_shader shader();
 	dank_batch_renderer renderer(16.0f, 9.0f);
-	dank_text_renderer text_renderer(800.0f, 500.0f);
-	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consolab.ttf", 40);
+	dank_text_renderer text_renderer(800.0f, 450.0f);
+	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 20);
 
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
@@ -68,13 +68,24 @@ int main() {
 	}
 	
 	glClearColor(0, 1, 1, 1);
+
+	int frames = 0;
+	double time = 0;
+	std::string fps = "0";
 	while (window.open()) {
+		time += c.tick();
+		if (time >= 1.0f) {
+			fps = std::to_string(frames).c_str();
+			std::cout << frames << std::endl;
+			frames = 0;
+			time = 0;
+		}
 		window.clear();
-		c.tick();
 		renderer.submit(sprites, sprite_count);
 		renderer.render();
-		text_renderer.render_text("TESTINGGGGG", 10, 10, 1, dank_vec3(1,1,0));
+			text_renderer.render_text(fps.c_str(), 10, 10, 1, dank_vec3(1,1,0));
 		window.update();
+		frames++;
 	}
 
 	return 0;

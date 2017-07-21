@@ -261,4 +261,7 @@
   <ItemGroup>
     <Text Include="Debug\DankToaster.log" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resources\icecream.mp3" />
+  </ItemGroup>
 </Project>

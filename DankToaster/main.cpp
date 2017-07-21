@@ -8,14 +8,17 @@
 #include <time.h>
 #include "Graphics\dank_batch_renderer.h"
 #include "Graphics\dank_text_renderer.h"
+#include <irrKlang.h>
 
 int main() {
+	using namespace irrklang;
 	dank_clock c;
 	dank_window window(1024, 576, "Testtttt");
 	dank_shader shader();
 	dank_batch_renderer renderer(16.0f, 9.0f);
 	dank_text_renderer text_renderer(800.0f, 450.0f);
 	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 20);
+	ISoundEngine *SoundEngine = createIrrKlangDevice();
 
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
@@ -72,6 +75,7 @@ int main() {
 	int frames = 0;
 	double time = 0;
 	std::string fps = "0";
+	SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	while (window.open()) {
 		time += c.tick();
 		if (time >= 1.0f) {

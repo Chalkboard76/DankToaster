@@ -9,12 +9,26 @@ void resize_callback(GLFWwindow *window, int width, int height) {
 	glViewport(0, 0, width, height);
 }
 
+void character_callback(GLFWwindow* window, unsigned int codepoint)
+{
+	std::cout << codepoint << std::endl;
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+	dank_window* win = (dank_window*) glfwGetWindowUserPointer(window);
+	win->keys[key] = action != GLFW_RELEASE;
+}
+
 dank_window::dank_window(const int width, const int height, const char* title) {
 	glfwSetErrorCallback(error_callback);
 
 	_width = width;
 	_height = height;
 	_title = title;
+
+	for (int i = 0; i < MAX_KEYS; i++) {
+		keys[i] = false;
+	}
 
 	if (!glfwInit()) {
 		printf("%s\n", "GLFW failed to initialize.");
@@ -32,7 +46,10 @@ dank_window::dank_window(const int width, const int height, const char* title) {
 	}
 
 	glfwMakeContextCurrent(_window);
+	glfwSetWindowUserPointer(_window, this);
 	glfwSetWindowSizeCallback(_window, resize_callback);
+	glfwSetCharCallback(_window, character_callback);
+	glfwSetKeyCallback(_window, key_callback);
 
 	if (glewInit() != GLEW_OK) {
 		printf("%s\n", "Failed to initialize GLEW.");

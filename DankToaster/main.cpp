@@ -17,7 +17,7 @@ int main() {
 	dank_shader shader();
 	dank_batch_renderer renderer(16.0f, 9.0f);
 	dank_text_renderer text_renderer(800.0f, 450.0f);
-	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 20);
+	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 50);
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
 
 	dank_texture_sheet sheets[34] = {
@@ -70,13 +70,16 @@ int main() {
 		}
 	}
 	
-	glClearColor(0, 1, 1, 1);
+	glClearColor(0, 0, 0, 1);
 
 	int frames = 0;
 	double time = 0;
 	std::string fps = "0";
 	SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	while (window.open()) {
+		if (window.keys[GLFW_KEY_0]) {
+			std::cout << "IT WORKSSSSSSSSSSSSSSSSSSSSSSSSSS" << std::endl;
+		}
 		time += c.tick();
 		if (time >= 1.0f) {
 			fps = std::to_string(frames).c_str();

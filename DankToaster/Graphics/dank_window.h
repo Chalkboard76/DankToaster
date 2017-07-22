@@ -9,7 +9,10 @@ private:
 	int _width, _height;
 	const char* _title;
 	GLFWwindow* _window;
+	const static int MAX_KEYS = 500;
 public:
+	bool keys[MAX_KEYS];
+
 	dank_window(const int width, const int height, const char* title);
 	~dank_window();
 	void update();

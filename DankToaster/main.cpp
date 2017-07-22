@@ -80,6 +80,9 @@ int main() {
 		if (window.keys[GLFW_KEY_0]) {
 			std::cout << "IT WORKSSSSSSSSSSSSSSSSSSSSSSSSSS" << std::endl;
 		}
+		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
+			std::cout << window.cursor_x << ", " << window.cursor_y << std::endl;
+		}
 		time += c.tick();
 		if (time >= 1.0f) {
 			fps = std::to_string(frames).c_str();

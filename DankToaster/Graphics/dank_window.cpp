@@ -19,6 +19,18 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	win->keys[key] = action != GLFW_RELEASE;
 }
 
+void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
+{
+	dank_window* win = (dank_window*) glfwGetWindowUserPointer(window);
+	win->cursor_x = xpos;
+	win->cursor_y = ypos;
+}
+
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+	dank_window* win = (dank_window*)glfwGetWindowUserPointer(window);
+	win->mouse[button] = action != GLFW_RELEASE;
+}
 dank_window::dank_window(const int width, const int height, const char* title) {
 	glfwSetErrorCallback(error_callback);
 
@@ -50,6 +62,8 @@ dank_window::dank_window(const int width, const int height, const char* title) {
 	glfwSetWindowSizeCallback(_window, resize_callback);
 	glfwSetCharCallback(_window, character_callback);
 	glfwSetKeyCallback(_window, key_callback);
+	glfwSetCursorPosCallback(_window, cursor_position_callback);
+	glfwSetMouseButtonCallback(_window, mouse_button_callback);
 
 	if (glewInit() != GLEW_OK) {
 		printf("%s\n", "Failed to initialize GLEW.");

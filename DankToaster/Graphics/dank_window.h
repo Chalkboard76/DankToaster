@@ -10,8 +10,12 @@ private:
 	const char* _title;
 	GLFWwindow* _window;
 	const static int MAX_KEYS = 500;
+	const static int MAX_MOUSE_BUTTONS = 20;
 public:
 	bool keys[MAX_KEYS];
+	bool mouse[MAX_MOUSE_BUTTONS];
+	double cursor_x;
+	double cursor_y;
 
 	dank_window(const int width, const int height, const char* title);
 	~dank_window();

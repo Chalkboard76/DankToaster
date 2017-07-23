@@ -18,6 +18,7 @@ struct dank_mat4 {
 	dank_mat4& add(const dank_mat4& matrix);
 	dank_mat4& subtract(const dank_mat4& matrix);
 	dank_mat4 multiply(const dank_mat4& matrix);
+	dank_vec3 multiply(const dank_vec3& vector);
 	dank_vec4 multiply(const dank_vec4& vector);
 
 	dank_mat4& operator+(const float& scalar);
@@ -27,6 +28,7 @@ struct dank_mat4 {
 	dank_mat4& operator+(const dank_mat4& matrix);
 	dank_mat4& operator-(const dank_mat4& matrix);
 	dank_mat4 operator*(dank_mat4& matrix);
+	dank_vec3 operator*(const dank_vec3& vector);
 	dank_vec4 operator*(const dank_vec4& vector);
 
 	friend std::ostream& operator<<(std::ostream& os, dank_mat4& matrix);

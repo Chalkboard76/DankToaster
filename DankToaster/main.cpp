@@ -9,6 +9,7 @@
 #include "Graphics\dank_batch_renderer.h"
 #include "Graphics\dank_text_renderer.h"
 #include <irrKlang.h>
+#include "Graphics\dank_widget.h"
 
 int main() {
 	using namespace irrklang;
@@ -69,13 +70,18 @@ int main() {
 			sprite_count++;
 		}
 	}
-	
+
+	dank_sprite UI(1,1,4,4,textures[0]);
+	dank_sprite button(1, 1, 1, 1, textures[1]);
+	dank_widget widget(&UI);
+	widget.add_component(&button);
+
 	glClearColor(0, 0, 0, 1);
 
 	int frames = 0;
 	double time = 0;
 	std::string fps = "0";
-	SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
+	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	while (window.open()) {
 		if (window.keys[GLFW_KEY_0]) {
 			std::cout << "IT WORKSSSSSSSSSSSSSSSSSSSSSSSSSS" << std::endl;
@@ -93,7 +99,10 @@ int main() {
 		window.clear();
 		renderer.submit(sprites, sprite_count);
 		renderer.render();
-			text_renderer.render_text(fps.c_str(), 10, 10, 1, dank_vec3(1,1,0));
+		renderer.submit(widget.background, 1);
+		renderer.submit(widget.components[0], 1);
+		renderer.render();
+		text_renderer.render_text(fps.c_str(), 10, 10, 1, dank_vec3(1,1,0));
 		window.update();
 		frames++;
 	}

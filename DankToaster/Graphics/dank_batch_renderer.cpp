@@ -3,7 +3,7 @@
 dank_batch_renderer::dank_batch_renderer(float width, float height) {
 	shader.init("Shaders/spriteShader.vert", "Shaders/spriteShader.frag");
 	int texIndices[32] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 };
-	dank_mat4 projection = orthographic(0.0f, width, 0.0f, height, 0.0f, 2.0f);
+	dank_mat4 projection = orthographic(0.0f, width, 0.0f, height, -2.0f, 2.0f);
 	shader.enable();
 	shader.setUniformMat4("projection", projection);
 	shader.setUniform1v("our_textures", texIndices, 32);
@@ -61,7 +61,7 @@ void dank_batch_renderer::submit(dank_renderable* renderables, int count) {
 
 void dank_batch_renderer::render() {
 	shader.enable();
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 2; i++) {
 		if (!batches[i].empty()) {
 			render_batch(batches[i]);
 			batches[i].clear();

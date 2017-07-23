@@ -92,6 +92,22 @@ dank_vec4 dank_mat4::multiply(const dank_vec4& vector) {
 		+ elements[3 + 3 * 4] * vector.w;
 	return result;
 }
+dank_vec3 dank_mat4::multiply(const dank_vec3& vector) {
+	dank_vec3 result;
+	result.x = elements[0 + 0 * 4] * vector.x
+		+ elements[0 + 1 * 4] * vector.y
+		+ elements[0 + 2 * 4] * vector.z
+		+ elements[0 + 3 * 4] * 1;
+	result.y = elements[1 + 0 * 4] * vector.x
+		+ elements[1 + 1 * 4] * vector.y
+		+ elements[1 + 2 * 4] * vector.z
+		+ elements[1 + 3 * 4] * 1;
+	result.z = elements[2 + 0 * 4] * vector.x
+		+ elements[2 + 1 * 4] * vector.y
+		+ elements[2 + 2 * 4] * vector.z
+		+ elements[2 + 3 * 4] * 1;
+	return result;
+}
 dank_mat4& dank_mat4::operator+(const float& scalar) {
 	return add(scalar);
 }
@@ -109,6 +125,9 @@ dank_mat4& dank_mat4::operator-(const dank_mat4& matrix) {
 }
 dank_mat4 dank_mat4::operator*(dank_mat4& matrix) {
 	return multiply(matrix);
+}
+dank_vec3 dank_mat4::operator*(const dank_vec3& vector) {
+	return multiply(vector);
 }
 dank_vec4 dank_mat4::operator*(const dank_vec4& vector) {
 	return multiply(vector);

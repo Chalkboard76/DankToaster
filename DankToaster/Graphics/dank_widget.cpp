@@ -20,11 +20,11 @@ void dank_widget::transform(dank_mat4 transform) {
 	transformation = transform * transformation;
 	_position = transform * _position;
 	for (int i = 0; i < 4; i++) {
-		background->vertices[i].position = transformation * background->vertices[i].position;
+		background->vertices[i].position = transform * background->vertices[i].position;
 	}
 	for (int i = 0; i < components.size(); i++) {
-		for (int i = 0; i < 4; i++) {
-			components[i]->vertices[i].position = transformation * components[i]->vertices[i].position;
+		for (int j = 0; j < 4; j++) {
+			components[i]->vertices[j].position = transform * components[i]->vertices[j].position;
 		}
 	}
 }

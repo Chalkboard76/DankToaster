@@ -82,9 +82,11 @@ int main() {
 	double time = 0;
 	std::string fps = "0";
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
+	dank_mat4 t = translationMatrix(dank_vec3(0.01, 0, 0));
+	widget.transform(t);
 	while (window.open()) {
 		if (window.keys[GLFW_KEY_0]) {
-			std::cout << "IT WORKSSSSSSSSSSSSSSSSSSSSSSSSSS" << std::endl;
+			widget.transform(t);
 		}
 		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
 			std::cout << window.cursor_x << ", " << window.cursor_y << std::endl;

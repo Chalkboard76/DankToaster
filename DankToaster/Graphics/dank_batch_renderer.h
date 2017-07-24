@@ -1,4 +1,5 @@
 #pragma once
+
 #include "dank_renderable.h"
 #include <GL\glew.h>
 #include "dank_vertex.h"
@@ -18,6 +19,7 @@ struct dank_batch_renderer {
 	unsigned int	index_count;
 	dank_shader		shader;
 
+	dank_batch_renderer();
 	dank_batch_renderer(float width, float height);
 	~dank_batch_renderer();
 	void submit(dank_renderable* renderables, int count);

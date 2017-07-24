@@ -10,6 +10,7 @@
 #include "Graphics\dank_text_renderer.h"
 #include <irrKlang.h>
 #include "Graphics\dank_widget.h"
+#include "Graphics\dank_tile_layer.h"
 
 int main() {
 	using namespace irrklang;
@@ -20,6 +21,7 @@ int main() {
 	dank_text_renderer text_renderer(800.0f, 450.0f);
 	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 50);
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
+	dank_tile_layer tiles(&renderer, &renderer.shader, 0.0f, 10000);
 
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
@@ -61,13 +63,10 @@ int main() {
 	for (int i = 0; i < 34; i++) {
 		textures[i] = dank_texture(sheets[i], dank_vec2(0, 0), 1, 1);
 	}
-	dank_sprite* sprites = new dank_sprite[10000];
-	int sprite_count = 0;
 	srand(time(NULL));
 	for (float y = 0.0f; y < 9.0f; y += 0.25f) {
 		for (float x = 0.0f; x < 16.0f; x += 0.25f) {
-			sprites[sprite_count] = dank_sprite(x, y, 0.24f, 0.24f, textures[sprite_count % 34]);
-			sprite_count++;
+			tiles.add(&dank_sprite(x, y, 0.24f, 0.24f, textures[tiles.getSpriteCount() % 34]));
 		}
 	}
 
@@ -99,8 +98,7 @@ int main() {
 			time = 0;
 		}
 		window.clear();
-		renderer.submit(sprites, sprite_count);
-		renderer.render();
+		tiles.render();
 		renderer.submit(widget.background, 1);
 		renderer.submit(widget.components[0], 1);
 		renderer.render();

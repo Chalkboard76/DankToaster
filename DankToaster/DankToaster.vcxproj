@@ -24,6 +24,7 @@
     <ClInclude Include="Graphics\dank_character.h" />
     <ClInclude Include="Graphics\dank_glyph.h" />
     <ClInclude Include="Graphics\dank_label.h" />
+    <ClInclude Include="Graphics\dank_tile_layer.h" />
     <ClInclude Include="Graphics\dank_shader.h" />
     <ClInclude Include="Graphics\dank_sprite.h" />
     <ClInclude Include="Graphics\dank_texture.h" />
@@ -47,6 +48,7 @@
     <ClCompile Include="Graphics\dank_batch_renderer.cpp" />
     <ClCompile Include="Graphics\dank_glyph.cpp" />
     <ClCompile Include="Graphics\dank_label.cpp" />
+    <ClCompile Include="Graphics\dank_tile_layer.cpp" />
     <ClCompile Include="Graphics\dank_shader.cpp" />
     <ClCompile Include="Graphics\dank_sprite.cpp" />
     <ClCompile Include="Graphics\dank_texture.cpp" />

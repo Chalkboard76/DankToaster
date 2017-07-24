@@ -5,8 +5,10 @@
 #include "dank_vertex.h"
 #include "dank_batch.h"
 #include "dank_shader.h"
+#include "dank_sprite.h"
+#include "dank_renderer.h"
 
-struct dank_batch_renderer {
+struct dank_batch_renderer : dank_renderer {
 	const static int MAX_RENDERABLES = 5000;
 	const static int VERTEX_SIZE = sizeof(dank_vertex);
 	const static int RENDERABLE_SIZE = VERTEX_SIZE * 4;
@@ -23,6 +25,7 @@ struct dank_batch_renderer {
 	dank_batch_renderer(float width, float height);
 	~dank_batch_renderer();
 	void submit(dank_renderable* renderables, int count);
+	void submit(std::vector<dank_sprite*> sprites);
 	void render_batch(dank_batch& batch);
 	void render();
 };

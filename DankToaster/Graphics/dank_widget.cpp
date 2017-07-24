@@ -8,9 +8,10 @@ dank_widget::~dank_widget() {
 
 }
 
-dank_widget::dank_widget(dank_sprite* widget_background) {
+dank_widget::dank_widget(dank_sprite* widget_background, dank_renderer* renderer) {
 	_position.x = widget_background->vertices[0].position.x;
 	_position.y = widget_background->vertices[0].position.y;
+	_renderer = renderer;
 
 	background = widget_background;
 	transformation = translationMatrix(dank_vec3(_position.x, _position.y, 0.0f));

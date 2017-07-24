@@ -24,12 +24,14 @@
     <ClInclude Include="Graphics\dank_character.h" />
     <ClInclude Include="Graphics\dank_glyph.h" />
     <ClInclude Include="Graphics\dank_label.h" />
+    <ClInclude Include="Graphics\dank_renderer.h" />
     <ClInclude Include="Graphics\dank_tile_layer.h" />
     <ClInclude Include="Graphics\dank_shader.h" />
     <ClInclude Include="Graphics\dank_sprite.h" />
     <ClInclude Include="Graphics\dank_texture.h" />
     <ClInclude Include="Graphics\dank_texture_sheet.h" />
     <ClInclude Include="Graphics\dank_text_renderer.h" />
+    <ClInclude Include="Graphics\dank_ui_layer.h" />
     <ClInclude Include="Graphics\dank_vertex.h" />
     <ClInclude Include="Graphics\dank_widget.h" />
     <ClInclude Include="Graphics\dank_window.h" />
@@ -54,6 +56,7 @@
     <ClCompile Include="Graphics\dank_texture.cpp" />
     <ClCompile Include="Graphics\dank_texture_sheet.cpp" />
     <ClCompile Include="Graphics\dank_text_renderer.cpp" />
+    <ClCompile Include="Graphics\dank_ui_layer.cpp" />
     <ClCompile Include="Graphics\dank_widget.cpp" />
     <ClCompile Include="Graphics\dank_window.cpp" />
     <ClCompile Include="main.cpp" />

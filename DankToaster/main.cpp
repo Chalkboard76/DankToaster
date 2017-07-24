@@ -72,7 +72,7 @@ int main() {
 
 	dank_sprite UI(1,1,4,4,textures[0]);
 	dank_sprite button(1, 1, 1, 1, textures[1]);
-	dank_widget widget(&UI);
+	dank_widget widget(&UI, &renderer);
 	widget.add_component(&button);
 
 	glClearColor(0, 0, 0, 1);

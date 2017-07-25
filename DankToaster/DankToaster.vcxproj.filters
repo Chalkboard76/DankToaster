@@ -99,6 +99,9 @@
     <ClInclude Include="Graphics\dank_colored_square.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Graphics\dank_colored_square_renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -170,12 +173,17 @@
     <ClCompile Include="Graphics\dank_colored_square.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics\dank_colored_square_renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\spriteShader.vert" />
     <None Include="Shaders\spriteShader.frag" />
     <None Include="Shaders\textShader.frag" />
     <None Include="Shaders\textShader.vert" />
+    <None Include="Shaders\squareShader.frag" />
+    <None Include="Shaders\squareShader.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sheet1.png">

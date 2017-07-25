@@ -1,4 +1,8 @@
-﻿  dank_batch_renderer.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_batch_renderer.cpp(101): warning C4244: 'argument': conversion from 'float' to 'GLenum', possible loss of data
+﻿  main.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(28): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(70): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(88): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(21): warning C4930: 'dank_shader shader(void)': prototyped function not called (was a variable definition intended?)
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

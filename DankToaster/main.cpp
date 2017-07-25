@@ -11,6 +11,8 @@
 #include <irrKlang.h>
 #include "Graphics\dank_widget.h"
 #include "Graphics\dank_tile_layer.h"
+#include "Graphics\dank_colored_square_renderer.h"
+#include "Graphics\dank_colored_square.h"
 
 int main() {
 	using namespace irrklang;
@@ -22,6 +24,8 @@ int main() {
 	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 50);
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
 	dank_tile_layer tiles(&renderer, &renderer.shader, 0.0f, 10000);
+	dank_colored_square_renderer square_renderer(16.0f, 9.0f);
+	dank_colored_square test_square(0.15,0.15,1.75,.75,dank_vec4(0,0,0,0.75));
 
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
@@ -102,6 +106,8 @@ int main() {
 		renderer.submit(widget.background, 1);
 		renderer.submit(widget.components[0], 1);
 		renderer.render();
+		square_renderer.submit(&test_square, 1);
+		square_renderer.render();
 		text_renderer.render_text(fps.c_str(), 10, 10, 1, dank_vec3(1,1,0));
 		window.update();
 		frames++;

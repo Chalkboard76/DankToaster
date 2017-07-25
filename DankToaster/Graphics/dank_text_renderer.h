@@ -9,12 +9,11 @@
 
 
 class dank_text_renderer {
-#define MAX_GLYPHS				500
-#define GLYPH_VERTEX_SIZE		sizeof(dank_glyph)
-#define GLYPH_SIZE				4 * GLYPH_VERTEX_SIZE
-#define NUM_INDICES				6 * MAX_GLYPHS
-#define BUFFER_SIZE				MAX_GLYPHS * GLYPH_SIZE
-
+	const static int MAX_GLYPHS = 500;
+	const static int GLYPH_VERTEX_SIZE = sizeof(dank_glyph);
+	const static int GLYPH_SIZE = 4 * GLYPH_VERTEX_SIZE;
+	const static int NUM_INDICES = 6 * MAX_GLYPHS;
+	const static int BUFFER_SIZE = MAX_GLYPHS * GLYPH_SIZE;
 
 private:
 	GLuint _VAO, _VBO, _EBO;

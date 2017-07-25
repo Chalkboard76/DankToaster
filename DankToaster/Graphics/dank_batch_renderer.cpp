@@ -17,8 +17,8 @@ dank_batch_renderer::dank_batch_renderer(float width, float height) {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, VERTEX_SIZE, (const GLvoid*)0);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, VERTEX_SIZE, (const GLvoid*)(offsetof(dank_vertex, dank_vertex::UV)));
-	glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, VERTEX_SIZE, (const GLvoid*)(offsetof(dank_vertex, dank_vertex::tex_unit)));
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, VERTEX_SIZE, (const GLvoid*)(offsetof(dank_vertex_textured, dank_vertex_textured::UV)));
+	glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, VERTEX_SIZE, (const GLvoid*)(offsetof(dank_vertex_textured, dank_vertex_textured::tex_unit)));
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 	glEnableVertexAttribArray(2);
@@ -86,7 +86,7 @@ void dank_batch_renderer::render() {
 
 void dank_batch_renderer::render_batch(dank_batch& batch) {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	dank_vertex* vertex = (dank_vertex*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+	dank_vertex_textured* vertex = (dank_vertex_textured*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 
 	for (int i = 0; i < batch.renderables.size(); i++) {
 		dank_renderable r = batch.renderables[i];

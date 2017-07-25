@@ -1,7 +1,7 @@
 #pragma once
-#include "dank_vertex.h"
+#include "dank_vertex_textured.h"
 
 struct dank_renderable {
 	unsigned int tex_ID;
-	dank_vertex vertices[4];
+	dank_vertex_textured vertices[4];
 };

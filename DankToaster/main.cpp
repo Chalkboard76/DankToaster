@@ -13,6 +13,7 @@
 #include "Graphics\dank_tile_layer.h"
 #include "Graphics\dank_colored_square_renderer.h"
 #include "Graphics\dank_colored_square.h"
+#include "UI\dank_bar.h"
 
 int main() {
 	using namespace irrklang;
@@ -26,6 +27,8 @@ int main() {
 	dank_tile_layer tiles(&renderer, &renderer.shader, 0.0f, 10000);
 	dank_colored_square_renderer square_renderer(16.0f, 9.0f);
 	dank_colored_square test_square(0.15,0.15,1.75,.75,dank_vec4(0,0,0,0.75));
+	dank_bar bar(&square_renderer, 100, 0, 0, dank_vec4(1, 0, 0, 1), dank_vec4(0, 0, 0, 1), dank_vec3(6, 6, 1), 4, 1);
+
 
 	dank_texture_sheet sheets[34] = {
 		dank_texture_sheet("Resources/test/tex1.png"),
@@ -88,6 +91,7 @@ int main() {
 	dank_mat4 t = translationMatrix(dank_vec3(0.01, 0, 0));
 	widget.transform(t);
 	while (window.open()) {
+		bar.increment(0.1);
 		if (window.keys[GLFW_KEY_0]) {
 			widget.transform(t);
 		}
@@ -109,6 +113,7 @@ int main() {
 		square_renderer.submit(&test_square, 1);
 		square_renderer.render();
 		text_renderer.render_text(fps.c_str(), 10, 10, 1, dank_vec3(1,1,0));
+		bar.render();
 		window.update();
 		frames++;
 	}

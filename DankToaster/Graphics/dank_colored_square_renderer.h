@@ -4,8 +4,9 @@
 #include "dank_shader.h"
 #include "dank_colored_square.h"
 #include <vector>
+#include "dank_renderer.h"
 
-class dank_colored_square_renderer {
+class dank_colored_square_renderer : dank_renderer {
 private:
 	const static int MAX_RENDERABLES = 1000;
 	const static int VERTEX_SIZE = sizeof(dank_vertex_colored);

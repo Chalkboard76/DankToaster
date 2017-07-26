@@ -7,7 +7,7 @@
 #include "dank_renderer.h"
 
 class dank_widget {
-private:
+protected:
 	dank_vec3 _position;
 	dank_renderer* _renderer;
 public:

@@ -1,36 +1,14 @@
-﻿  dank_batch.cpp
-  dank_batch_renderer.cpp
-Graphics\dank_batch_renderer.cpp(101): warning C4244: 'argument': conversion from 'float' to 'GLenum', possible loss of data
-  dank_colored_square.cpp
-  dank_colored_square_renderer.cpp
-  dank_glyph.cpp
-Graphics\dank_glyph.cpp(15): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-Graphics\dank_glyph.cpp(17): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-Graphics\dank_glyph.cpp(19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-Graphics\dank_glyph.cpp(21): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-  dank_label.cpp
-  dank_tile_layer.cpp
-  dank_sprite.cpp
-  dank_text_renderer.cpp
-Graphics\dank_text_renderer.cpp(9): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-Graphics\dank_text_renderer.cpp(64): warning C4244: 'argument': conversion from 'unsigned int' to 'const float', possible loss of data
-Graphics\dank_text_renderer.cpp(65): warning C4244: 'argument': conversion from 'FT_Int' to 'const float', possible loss of data
-Graphics\dank_text_renderer.cpp(67): warning C4838: conversion from 'FT_Pos' to 'GLuint' requires a narrowing conversion
-  dank_ui_layer.cpp
-  dank_widget.cpp
-  main.cpp
+﻿  main.cpp
 main.cpp(23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 main.cpp(28): warning C4305: 'argument': truncation from 'double' to 'float'
-main.cpp(70): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-main.cpp(88): warning C4305: 'argument': truncation from 'double' to 'const float'
-main.cpp(21): warning C4930: 'dank_shader shader(void)': prototyped function not called (was a variable definition intended?)
-  dank_mat4.cpp
-  dank_bar.cpp
+main.cpp(72): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.cpp(90): warning C4305: 'argument': truncation from 'double' to 'const float'
+main.cpp(96): warning C4305: 'argument': truncation from 'double' to 'float'
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  202 of 993 functions (20.3%) were compiled, the rest were copied from previous compilation.
-    150 functions were new in current compilation
-    38 functions had inline decision re-evaluated but remain unchanged
+  51 of 1024 functions ( 5.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    16 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\Jacob\files\Projects\DankToaster\x64\Release\vc120.pdb'; linking object as if no debug info
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Release\DankToaster.exe

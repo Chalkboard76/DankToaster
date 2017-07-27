@@ -76,7 +76,7 @@ void dank_batch_renderer::submit(std::vector<dank_sprite*> sprites) {
 
 void dank_batch_renderer::render() {
 	shader.enable();
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (!batches[i].empty()) {
 			render_batch(batches[i]);
 			batches[i].clear();
@@ -93,8 +93,8 @@ void dank_batch_renderer::render_batch(dank_batch& batch) {
 		for (int j = 0; j < 4; j++, vertex++) {
 			*vertex = r.vertices[j];
 			vertex->tex_unit = batch.map[r.tex_ID];
-			index_count += 6;
 		}
+		index_count += 6;
 	}
 
 	for (int i = 0; i < batch.indices.size(); i++) {

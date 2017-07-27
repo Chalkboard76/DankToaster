@@ -9,7 +9,6 @@ uniform sampler2D our_textures[32];
 
 void main()
 {
-	
 	int tid = int(our_tex_unit);
 	frag_color = texture(our_textures[tid], our_UV);
 }

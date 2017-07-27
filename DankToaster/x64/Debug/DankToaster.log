@@ -1,3 +1,8 @@
-﻿  dank_bar.cpp
+﻿  main.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(28): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(72): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(90): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(96): warning C4305: 'argument': truncation from 'double' to 'float'
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

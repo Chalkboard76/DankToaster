@@ -16,9 +16,9 @@ private:
 
 	GLuint			_VAO, _VBO, _EBO;
 	unsigned int	_index_count;
-	dank_shader		_shader;
 	std::vector<dank_colored_square*> _squares;
 public:
+	dank_shader		_shader;
 	dank_colored_square_renderer();
 	dank_colored_square_renderer(float width, float height);
 	~dank_colored_square_renderer();

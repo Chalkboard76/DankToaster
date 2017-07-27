@@ -19,7 +19,6 @@ int main() {
 	using namespace irrklang;
 	dank_clock c;
 	dank_window window(1024, 576, "Testtttt");
-	dank_shader shader();
 	dank_batch_renderer renderer(16.0f, 9.0f);
 	dank_text_renderer text_renderer(800.0f, 450.0f);
 	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 50);
@@ -73,7 +72,7 @@ int main() {
 	srand(time(NULL));
 	for (float y = 0.0f; y < 9.0f; y += 0.25f) {
 		for (float x = 0.0f; x < 16.0f; x += 0.25f) {
-			tiles.add(&dank_sprite(x, y, 0.24f, 0.24f, textures[tiles.getSpriteCount() % 34]));
+			tiles.add(&dank_sprite(x, y, 0.25f, 0.25f, textures[tiles.getSpriteCount() % 34]));
 		}
 	}
 
@@ -89,7 +88,10 @@ int main() {
 	std::string fps = "0";
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	dank_mat4 t = translationMatrix(dank_vec3(0.01, 0, 0));
-	widget.transform(t);
+
+	dank_mat4 view = translationMatrix(dank_vec3(1, 1, 0));
+	//renderer.shader.setUniformMat4("view", view);
+	//square_renderer._shader.setUniformMat4("view", view);
 	while (window.open()) {
 		bar.increment(0.1);
 		if (window.keys[GLFW_KEY_0]) {

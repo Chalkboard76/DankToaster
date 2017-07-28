@@ -20,7 +20,7 @@ private:
 public:
 
 	std::unordered_map<GLchar, dank_character> characters;
-	dank_shader shader;
+	dank_shader* shader;
 
 	dank_text_renderer(int width, int height);
 	~dank_text_renderer();

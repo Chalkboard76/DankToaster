@@ -23,7 +23,7 @@ int main() {
 	dank_text_renderer text_renderer(800.0f, 450.0f);
 	text_renderer.load_font("C:\\Users\\Jacob\\files\\Projects\\DankToaster\\DankToaster\\Resources\\fonts\\consola.ttf", 50);
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
-	dank_tile_layer tiles(&renderer, &renderer.shader, 0.0f, 10000);
+	dank_tile_layer tiles(&renderer, 0.0f, 10000);
 	dank_colored_square_renderer square_renderer(16.0f, 9.0f);
 	dank_colored_square test_square(0.15,0.15,1.75,.75,dank_vec4(0,0,0,0.75));
 	dank_bar bar(&square_renderer, 100, 0, 0, dank_vec4(1, 0, 0, 1), dank_vec4(0, 0, 0, 1), dank_vec3(6, 6, 1), 4, 1);
@@ -87,15 +87,20 @@ int main() {
 	double time = 0;
 	std::string fps = "0";
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
-	dank_mat4 t = translationMatrix(dank_vec3(0.01, 0, 0));
+	dank_mat4 t = translationMatrix(dank_vec3(0.1, 0, 0));
 
-	dank_mat4 view = translationMatrix(dank_vec3(1, 1, 0));
-	//renderer.shader.setUniformMat4("view", view);
 	//square_renderer._shader.setUniformMat4("view", view);
+	dank_mat4 view = translationMatrix(dank_vec3(0, 0, 0));
+	renderer.shader->setUniformMat4("view", view);
+
 	while (window.open()) {
+		
 		bar.increment(0.1);
 		if (window.keys[GLFW_KEY_0]) {
 			widget.transform(t);
+			renderer.shader->enable();
+			view.elements[12] -= 0.1;
+			renderer.shader->setUniformMat4("view", view);
 		}
 		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
 			std::cout << window.cursor_x << ", " << window.cursor_y << std::endl;

@@ -4,10 +4,10 @@
 #include FT_FREETYPE_H
 
 dank_text_renderer::dank_text_renderer(int width, int height) {
-	shader.init("Shaders/textShader.vert", "Shaders/textShader.frag");
-	shader.enable();
-	shader.setUniformMat4("projection", orthographic(0.0f, width, 0.0f, height, 0.0f, 2.0f));
-	shader.setUniform1i("text", 0);
+	shader = new dank_shader("Shaders/textShader.vert", "Shaders/textShader.frag");
+	shader->enable();
+	shader->setUniformMat4("projection", orthographic(0.0f, width, 0.0f, height, 0.0f, 2.0f));
+	shader->setUniform1i("text", 0);
 
 	glGenVertexArrays(1, &_VAO);
 	glGenBuffers(1, &_VBO);
@@ -21,7 +21,7 @@ dank_text_renderer::dank_text_renderer(int width, int height) {
 }
 
 dank_text_renderer::~dank_text_renderer() {
-
+	delete shader;
 }
 
 void dank_text_renderer::load_font(std::string font, int font_size) {
@@ -86,8 +86,8 @@ void render_label(dank_label label) {
 }
 
 void dank_text_renderer::render_text(std::string text, int x, int y, int scale, dank_vec3 color) {
-	shader.enable();
-	shader.setUniform3f("textColor", color);
+	shader->enable();
+	shader->setUniform3f("textColor", color);
 	glBindVertexArray(_VAO);
 
 	std::string::const_iterator c;

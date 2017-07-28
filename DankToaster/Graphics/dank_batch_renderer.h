@@ -19,7 +19,8 @@ struct dank_batch_renderer : dank_renderer {
 	dank_batch		batches[4];
 	int				batch_count;
 	unsigned int	index_count;
-	dank_shader		shader;
+	dank_shader*	shader;
+	dank_mat4		view;
 
 	dank_batch_renderer();
 	dank_batch_renderer(float width, float height);

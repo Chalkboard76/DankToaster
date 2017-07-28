@@ -3,9 +3,8 @@
 dank_tile_layer::dank_tile_layer() {
 }
 
-dank_tile_layer::dank_tile_layer(dank_batch_renderer* renderer, dank_shader* shader, float depth, int max_sprites) {
+dank_tile_layer::dank_tile_layer(dank_batch_renderer* renderer, float depth, int max_sprites) {
 	_renderer = renderer;
-	_shader = shader;
 	_depth = depth;
 	_sprites = new dank_sprite[max_sprites];
 	_sprite_count = 0;
@@ -21,7 +20,6 @@ void dank_tile_layer::add(dank_sprite* sprite) {
 }
 
 void dank_tile_layer::render() {
-	_shader->enable();
 	_renderer->submit(_sprites, _sprite_count);
 	_renderer->render();
 }

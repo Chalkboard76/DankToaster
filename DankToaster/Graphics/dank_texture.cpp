@@ -2,8 +2,7 @@
 
 dank_texture::dank_texture() {
 }
-dank_texture::dank_texture(const dank_texture_sheet& sheet, dank_vec2 coord, float width, float height) {
-	tex_ID = sheet.tex_ID;
+dank_texture::dank_texture(dank_vec2 coord, float width, float height) {
 	UV = coord;
 	this->width = width;
 	this->height = height;

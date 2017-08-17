@@ -14,6 +14,7 @@
 #include "Graphics\dank_colored_square_renderer.h"
 #include "Graphics\dank_colored_square.h"
 #include "UI\dank_bar.h"
+#include "Game\dank_level.h"
 
 int main() {
 	using namespace irrklang;
@@ -27,59 +28,10 @@ int main() {
 	dank_colored_square_renderer square_renderer(16.0f, 9.0f);
 	dank_colored_square test_square(0.15,0.15,1.75,.75,dank_vec4(0,0,0,0.75));
 	dank_bar bar(&square_renderer, 100, 0, 0, dank_vec4(1, 0, 0, 1), dank_vec4(0, 0, 0, 1), dank_vec3(6, 6, 1), 4, 1);
+	
+	dank_level level("Resources/Maps/test.map", );
 
-
-	dank_texture_sheet sheets[34] = {
-		dank_texture_sheet("Resources/test/tex1.png"),
-		dank_texture_sheet("Resources/test/tex2.png"),
-		dank_texture_sheet("Resources/test/tex3.png"),
-		dank_texture_sheet("Resources/test/tex4.png"),
-		dank_texture_sheet("Resources/test/tex5.png"),
-		dank_texture_sheet("Resources/test/tex6.png"),
-		dank_texture_sheet("Resources/test/tex7.png"),
-		dank_texture_sheet("Resources/test/tex8.png"),
-		dank_texture_sheet("Resources/test/tex9.png"),
-		dank_texture_sheet("Resources/test/tex10.png"),
-		dank_texture_sheet("Resources/test/tex11.png"),
-		dank_texture_sheet("Resources/test/tex12.png"),
-		dank_texture_sheet("Resources/test/tex13.png"),
-		dank_texture_sheet("Resources/test/tex14.png"),
-		dank_texture_sheet("Resources/test/tex15.png"),
-		dank_texture_sheet("Resources/test/tex16.png"),
-		dank_texture_sheet("Resources/test/tex17.png"),
-		dank_texture_sheet("Resources/test/tex18.png"),
-		dank_texture_sheet("Resources/test/tex19.png"),
-		dank_texture_sheet("Resources/test/tex20.png"),
-		dank_texture_sheet("Resources/test/tex21.png"),
-		dank_texture_sheet("Resources/test/tex22.png"),
-		dank_texture_sheet("Resources/test/tex23.png"),
-		dank_texture_sheet("Resources/test/tex24.png"),
-		dank_texture_sheet("Resources/test/tex25.png"),
-		dank_texture_sheet("Resources/test/tex26.png"),
-		dank_texture_sheet("Resources/test/tex27.png"),
-		dank_texture_sheet("Resources/test/tex28.png"),
-		dank_texture_sheet("Resources/test/tex29.png"),
-		dank_texture_sheet("Resources/test/tex30.png"),
-		dank_texture_sheet("Resources/test/tex31.png"),
-		dank_texture_sheet("Resources/test/tex32.png"),
-		dank_texture_sheet("Resources/test/tex33.png"),
-		dank_texture_sheet("Resources/test/tex34.png")
-	};
-	dank_texture textures[34];
-	for (int i = 0; i < 34; i++) {
-		textures[i] = dank_texture(sheets[i], dank_vec2(0, 0), 1, 1);
-	}
 	srand(time(NULL));
-	for (float y = 0.0f; y < 9.0f; y += 0.25f) {
-		for (float x = 0.0f; x < 16.0f; x += 0.25f) {
-			tiles.add(&dank_sprite(x, y, 0.25f, 0.25f, textures[tiles.getSpriteCount() % 34]));
-		}
-	}
-
-	dank_sprite UI(1,1,4,4,textures[0]);
-	dank_sprite button(1, 1, 1, 1, textures[1]);
-	dank_widget widget(&UI, &renderer);
-	widget.add_component(&button);
 
 	glClearColor(0, 0, 0, 1);
 
@@ -89,7 +41,6 @@ int main() {
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	dank_mat4 t = translationMatrix(dank_vec3(0.1, 0, 0));
 
-	//square_renderer._shader.setUniformMat4("view", view);
 	dank_mat4 view = translationMatrix(dank_vec3(0, 0, 0));
 	renderer.shader->setUniformMat4("view", view);
 
@@ -97,7 +48,6 @@ int main() {
 		
 		bar.increment(0.1);
 		if (window.keys[GLFW_KEY_0]) {
-			widget.transform(t);
 			renderer.shader->enable();
 			view.elements[12] -= 0.1;
 			renderer.shader->setUniformMat4("view", view);
@@ -114,8 +64,6 @@ int main() {
 		}
 		window.clear();
 		tiles.render();
-		renderer.submit(widget.background, 1);
-		renderer.submit(widget.components[0], 1);
 		renderer.render();
 		square_renderer.submit(&test_square, 1);
 		square_renderer.render();

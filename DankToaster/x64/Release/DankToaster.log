@@ -1,14 +1,89 @@
-﻿  main.cpp
-main.cpp(23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(28): warning C4305: 'argument': truncation from 'double' to 'float'
-main.cpp(72): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-main.cpp(90): warning C4305: 'argument': truncation from 'double' to 'const float'
-main.cpp(96): warning C4305: 'argument': truncation from 'double' to 'float'
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Generating code
-  51 of 1024 functions ( 5.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    16 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\Jacob\files\Projects\DankToaster\x64\Release\vc120.pdb'; linking object as if no debug info
-  DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Release\DankToaster.exe
+﻿  dank_level.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+Game\dank_level.cpp(12): error C2143: syntax error: missing ';' before '}'
+Game\dank_level.cpp(12): error C3867: 'std::basic_istream<char,std::char_traits<char>>::get': non-standard syntax; use '&' to create a pointer to member
+  dank_tile.cpp
+  dank_batch.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  dank_batch_renderer.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+Graphics\dank_batch_renderer.cpp(103): warning C4244: 'argument': conversion from 'float' to 'GLenum', possible loss of data
+  dank_colored_square_renderer.cpp
+  dank_glyph.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+Graphics\dank_glyph.cpp(15): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+Graphics\dank_glyph.cpp(17): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+Graphics\dank_glyph.cpp(19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+Graphics\dank_glyph.cpp(21): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  dank_label.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  dank_tile_layer.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  dank_sprite.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  dank_texture.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  dank_texture_sheet.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture.h(12): error C2143: syntax error: missing ',' before '&'
+Graphics\dank_texture_sheet.cpp(35): error C2661: 'dank_texture::dank_texture': no overloaded function takes 4 arguments
+  dank_text_renderer.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+Graphics\dank_text_renderer.cpp(9): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+Graphics\dank_text_renderer.cpp(64): warning C4244: 'argument': conversion from 'unsigned int' to 'const float', possible loss of data
+Graphics\dank_text_renderer.cpp(65): warning C4244: 'argument': conversion from 'FT_Int' to 'const float', possible loss of data
+Graphics\dank_text_renderer.cpp(67): warning C4838: conversion from 'FT_Pos' to 'GLuint' requires a narrowing conversion
+  dank_ui_layer.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  dank_widget.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+  main.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'
+main.cpp(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+main.cpp(29): warning C4305: 'argument': truncation from 'double' to 'float'
+main.cpp(32): error C2059: syntax error: ')'
+main.cpp(34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.cpp(42): warning C4305: 'argument': truncation from 'double' to 'const float'
+main.cpp(49): warning C4305: 'argument': truncation from 'double' to 'float'
+main.cpp(52): warning C4305: '-=': truncation from 'double' to 'float'
+  dank_bar.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2065: 'dank_texture': undeclared identifier
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2059: syntax error: '>'
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_texture_sheet.h(9): error C2976: 'std::vector': too few template arguments
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\vector(700): note: see declaration of 'std::vector'

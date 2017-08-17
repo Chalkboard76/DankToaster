@@ -7,7 +7,7 @@
 
 dank_texture_sheet::dank_texture_sheet() {
 }
-dank_texture_sheet::dank_texture_sheet(const std::string& path) {
+dank_texture_sheet::dank_texture_sheet(const std::string& path, float sheet_width, float sheet_height, float tex_size) {
 	int width, height, numChannels;
 	glGenTextures(1, &tex_ID);
 	glBindTexture(GL_TEXTURE_2D, tex_ID);
@@ -29,7 +29,18 @@ dank_texture_sheet::dank_texture_sheet(const std::string& path) {
 		printf("Texture did not load properly.\n");
 	}
 	stbi_image_free(imageData);
+
+	for (float i = 0; i < sheet_height; i += tex_size) {
+		for (float j = 0; j < sheet_width; j += tex_size) {
+			dank_texture* tex = new dank_texture(dank_vec2(i, j), tex_size, tex_size);
+			tex->tex_ID = this->tex_ID;
+			textures.push_back(tex);
+		}
+	}
 }
 
 dank_texture_sheet::~dank_texture_sheet() {
+	for (int i = 0; i < textures.size(); i++) {
+		delete textures[i];
+	}
 }

@@ -1,9 +1,15 @@
 ﻿  main.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(28): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(72): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(90): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(98): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(102): warning C4305: '-=': truncation from 'double' to 'float'
-  DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
-  DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(29): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(32): error C2059: syntax error: ')'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(42): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(49): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(52): warning C4305: '-=': truncation from 'double' to 'float'
+  dank_level.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\game\dank_level.h(12): error C2061: syntax error: identifier 'dank_texture_sheet'
+c:\users\jacob\files\projects\danktoaster\danktoaster\game\dank_level.cpp(7): error C2511: 'dank_level::dank_level(const char *,dank_texture_sheet)': overloaded member function not found in 'dank_level'
+  c:\users\jacob\files\projects\danktoaster\danktoaster\game\dank_level.h(6): note: see declaration of 'dank_level'
+c:\users\jacob\files\projects\danktoaster\danktoaster\game\dank_level.cpp(13): error C2143: syntax error: missing ';' before '}'
+c:\users\jacob\files\projects\danktoaster\danktoaster\game\dank_level.cpp(13): error C3867: 'std::basic_istream<char,std::char_traits<char>>::get': non-standard syntax; use '&' to create a pointer to member
+  Generating Code...

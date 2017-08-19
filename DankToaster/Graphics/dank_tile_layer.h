@@ -8,7 +8,7 @@ class dank_tile_layer {
 private:
 	dank_batch_renderer* _renderer;
 	float _depth;
-	dank_sprite* _sprites;
+	std::vector<dank_sprite*> _sprites;
 	int _sprite_count;
 
 public:

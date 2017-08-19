@@ -28,8 +28,30 @@ int main() {
 	dank_colored_square_renderer square_renderer(16.0f, 9.0f);
 	dank_colored_square test_square(0.15,0.15,1.75,.75,dank_vec4(0,0,0,0.75));
 	dank_bar bar(&square_renderer, 100, 0, 0, dank_vec4(1, 0, 0, 1), dank_vec4(0, 0, 0, 1), dank_vec3(6, 6, 1), 4, 1);
-	
-	dank_level level("Resources/Maps/test.map", );
+	dank_texture_sheet sheet("Resources/Sheet2.png", 1, 1, .34);
+
+	/*dank_sprite s1(0.0f, 0.0f, 1.0f, 1.0f, *sheet.textures[0]);
+	dank_sprite s2(0.0f, 1.0f, 1.0f, 1.0f, *sheet.textures[1]);
+	dank_sprite s3(0.0f, 2.0f, 1.0f, 1.0f, *sheet.textures[2]);
+	dank_sprite s4(0.0f, 3.0f, 1.0f, 1.0f, *sheet.textures[3]);
+	dank_sprite s5(0.0f, 4.0f, 1.0f, 1.0f, *sheet.textures[4]);
+	dank_sprite s6(0.0f, 5.0f, 1.0f, 1.0f, *sheet.textures[5]);
+	dank_sprite s7(0.0f, 6.0f, 1.0f, 1.0f, *sheet.textures[6]);
+	dank_sprite s8(0.0f, 7.0f, 1.0f, 1.0f, *sheet.textures[7]);
+	dank_sprite s9(0.0f, 8.0f, 1.0f, 1.0f, *sheet.textures[8]);
+
+
+	tiles.add(&s1);
+	tiles.add(&s2);
+	tiles.add(&s3);
+	tiles.add(&s4);
+	tiles.add(&s5);
+	tiles.add(&s6);
+	tiles.add(&s7);
+	tiles.add(&s8);
+	tiles.add(&s9);*/
+
+	dank_level level("Resources/Maps/test.map", sheet);
 
 	srand(time(NULL));
 
@@ -43,7 +65,9 @@ int main() {
 
 	dank_mat4 view = translationMatrix(dank_vec3(0, 0, 0));
 	renderer.shader->setUniformMat4("view", view);
-
+	for (int i = 0; i < level.tiles.size(); i++) {
+		tiles.add(level.tiles[i]);
+	}
 	while (window.open()) {
 		
 		bar.increment(0.1);

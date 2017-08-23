@@ -9,10 +9,9 @@
 class dank_widget {
 protected:
 	dank_vec3 _position;
-	dank_renderer* _renderer;
 public:
 	dank_widget();
-	dank_widget(dank_sprite* background, dank_renderer* renderer);
+	dank_widget(dank_sprite* background);
 	~dank_widget();
 
 	dank_mat4 transformation;

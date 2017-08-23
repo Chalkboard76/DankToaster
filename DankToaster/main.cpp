@@ -14,8 +14,10 @@
 #include "Graphics\dank_colored_square_renderer.h"
 #include "Graphics\dank_colored_square.h"
 #include "UI\dank_bar.h"
+#include "UI\dank_chat_box.h"
 #include "Game\dank_level.h"
-
+#include "Graphics\dank_ui_layer.h"
+ 
 int main() {
 	using namespace irrklang;
 	dank_clock c;
@@ -29,6 +31,10 @@ int main() {
 	dank_colored_square test_square(0.15,0.15,1.75,.75,dank_vec4(0,0,0,0.75));
 	dank_bar bar(&square_renderer, 100, 0, 0, dank_vec4(1, 0, 0, 1), dank_vec4(0, 0, 0, 1), dank_vec3(6, 6, 1), 4, 1);
 	dank_texture_sheet sheet("Resources/Sheet2.png", 1, 1, .34);
+	dank_ui_layer ui(1);
+	dank_chat_box chat(1.0f, 1.0f, &renderer);
+	ui.add(&chat);
+
 
 	/*dank_sprite s1(0.0f, 0.0f, 1.0f, 1.0f, *sheet.textures[0]);
 	dank_sprite s2(0.0f, 1.0f, 1.0f, 1.0f, *sheet.textures[1]);
@@ -88,6 +94,7 @@ int main() {
 		}
 		window.clear();
 		tiles.render();
+		ui.render();
 		renderer.render();
 		square_renderer.submit(&test_square, 1);
 		square_renderer.render();

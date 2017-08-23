@@ -47,6 +47,7 @@
     <ClInclude Include="Math\dank_vec4.h" />
     <ClInclude Include="Math\Math.h" />
     <ClInclude Include="UI\dank_bar.h" />
+    <ClInclude Include="UI\dank_chat_box.h" />
     <ClInclude Include="Utils\clock.h" />
     <ClInclude Include="Utils\file_utils.h" />
     <ClInclude Include="Utils\stb_image.h" />
@@ -76,6 +77,7 @@
     <ClCompile Include="Math\dank_vec4.cpp" />
     <ClCompile Include="Math\Math.cpp" />
     <ClCompile Include="UI\dank_bar.cpp" />
+    <ClCompile Include="UI\dank_chat_box.cpp" />
     <ClCompile Include="Utils\clock.cpp" />
     <ClCompile Include="Utils\file_utils.cpp" />
   </ItemGroup>
@@ -125,6 +127,7 @@
     <Image Include="Resources\test\tex7.png" />
     <Image Include="Resources\test\tex8.png" />
     <Image Include="Resources\test\tex9.png" />
+    <Image Include="Resources\textboxbackground.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\fonts\consola.ttf" />

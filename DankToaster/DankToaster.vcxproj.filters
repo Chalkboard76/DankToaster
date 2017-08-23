@@ -108,6 +108,9 @@
     <ClInclude Include="Game\dank_tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UI\dank_chat_box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -186,6 +189,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\dank_tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\dank_chat_box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -305,6 +311,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Resources\test\tex3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\textboxbackground.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

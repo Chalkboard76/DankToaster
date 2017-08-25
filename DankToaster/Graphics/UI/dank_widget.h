@@ -33,4 +33,6 @@ public:
 	void add_text_renderer(dank_text_renderer* renderer);
 	virtual void render() {
 	}
+	virtual void submit() {
+	}
 };

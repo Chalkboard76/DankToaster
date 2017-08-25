@@ -1,6 +1,4 @@
-﻿  dank_chat_box.cpp
-  dank_bar.cpp
-  main.cpp
+﻿  main.cpp
 c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(30): error C2065: 'text_renderer': undeclared identifier
 c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(30): error C2228: left of '.load_font' must have class/struct/union
   c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(30): note: type is 'unknown-type'
@@ -25,17 +23,3 @@ c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(60): error C2227:
 c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(75): error C2065: 'text_renderer': undeclared identifier
 c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(75): error C2228: left of '.render_text' must have class/struct/union
   c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(75): note: type is 'unknown-type'
-  dank_widget.cpp
-  dank_ui_layer.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\ui\dank_ui_layer.cpp(9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  dank_fps_counter.cpp
-  dank_tile_layer.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_tile_layer.cpp(9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  dank_batch_renderer.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\renderers\dank_batch_renderer.cpp(103): warning C4244: 'argument': conversion from 'float' to 'GLenum', possible loss of data
-  Generating Code...
-  Compiling...
-  dank_colored_square_renderer.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  dank_text_renderer.cpp

@@ -61,8 +61,8 @@ void dank_colored_square_renderer::render() {
 		dank_colored_square* s = _squares[i];
 		for (int j = 0; j < 4; j++, vertex++) {
 			*vertex = s->vertices[j];
-			_index_count += 6;
 		}
+		_index_count += 6;
 	}
 
 	glUnmapBuffer(GL_ARRAY_BUFFER);

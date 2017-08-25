@@ -12,7 +12,7 @@ private:
 	dank_sprite* _widget_background;
 public:
 	dank_chat_box();
-	dank_chat_box(float x, float y, dank_batch_renderer* renderer);
+	dank_chat_box(float x, float y);
 	void render();
 	~dank_chat_box();
 };

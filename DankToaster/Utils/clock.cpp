@@ -7,6 +7,10 @@ dank_clock::dank_clock() {
 }
 dank_clock::~dank_clock() {
 }
+
+void dank_clock::init() {
+	_lastTime = glfwGetTime();
+}
 double dank_clock::tick() {
 	_currentTime = glfwGetTime();
 	double result = _currentTime - _lastTime;

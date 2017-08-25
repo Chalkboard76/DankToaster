@@ -12,7 +12,7 @@ class dank_ui_layer {
 private:
 	float _depth;
 	std::vector<dank_widget*> _widgets;
-	dank_batch_renderer* _batch_renderer;
+	dank_batch_renderer* _sprite_renderer;
 	dank_colored_square_renderer* _square_renderer;
 	dank_text_renderer* _text_renderer;
 public:

@@ -15,11 +15,10 @@ dank_chat_box::~dank_chat_box() {
 	delete _sheet;
 }
 
-/*
-DOES NOT ACTUALLY RENDER. The renderer is external, thus its render function should
-be called externally as well. This function just sends the necessary information to
-the appropriate renderers.
-*/
-void dank_chat_box::render() {
+void dank_chat_box::submit() {
 	sprite_renderer->submit(_widget_background, 1);
+}
+
+void dank_chat_box::render() {
+	
 }

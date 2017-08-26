@@ -9,6 +9,13 @@ dank_tile_layer::dank_tile_layer(float width, float height, float depth, int max
 	_text_renderer = new dank_text_renderer(width, height);
 	_depth = depth;
 	_sprite_count = 0;
+	view = translationMatrix(dank_vec3(0, 0, 0));
+	_batch_renderer->shader->enable();
+	_batch_renderer->shader->setUniformMat4("view", view);
+	_square_renderer->shader->enable();
+	_square_renderer->shader->setUniformMat4("view", view);
+	_text_renderer->shader->enable();
+	_text_renderer->shader->setUniformMat4("view", view);
 }
 
 dank_tile_layer::~dank_tile_layer() {
@@ -29,4 +36,41 @@ void dank_tile_layer::render() {
 
 int dank_tile_layer::getSpriteCount() {
 	return _sprite_count;
+}
+
+/* Adds all the tiles of the level to the tile layer.
+STILL NEED TO FIGURE OUT A WAY TO REMOVE A PREVIOUS LEVEL. */
+void dank_tile_layer::set_level(dank_level* level) {
+	for (int i = 0; i < level->tiles.size(); i++) {
+		add(level->tiles[i]);
+	}
+}
+
+void dank_tile_layer::scroll_up(float amount) {
+	view.elements[13] += amount;
+	translate_layer();
+}
+
+void dank_tile_layer::scroll_down(float amount) {
+	view.elements[13] -= amount;
+	translate_layer();
+}
+
+void dank_tile_layer::scroll_left(float amount) {
+	view.elements[12] += amount;
+	translate_layer();
+}
+
+void dank_tile_layer::scroll_right(float amount) {
+	view.elements[12] -= amount;
+	translate_layer();
+}
+
+void dank_tile_layer::translate_layer() {
+	_batch_renderer->shader->enable();
+	_batch_renderer->shader->setUniformMat4("view", view);
+	_square_renderer->shader->enable();
+	_square_renderer->shader->setUniformMat4("view", view);
+	_text_renderer->shader->enable();
+	_text_renderer->shader->setUniformMat4("view", view);
 }

@@ -4,10 +4,10 @@ dank_colored_square_renderer::dank_colored_square_renderer() {
 
 }
 dank_colored_square_renderer::dank_colored_square_renderer(float width, float height) {
-	_shader.init("Shaders/squareShader.vert", "Shaders/squareShader.frag");
+	shader = new dank_shader("Shaders/squareShader.vert", "Shaders/squareShader.frag");
 	dank_mat4 projection = orthographic(0.0f, width, 0.0f, height, -2.0f, 2.0f);
-	_shader.enable();
-	_shader.setUniformMat4("projection", projection);
+	shader->enable();
+	shader->setUniformMat4("projection", projection);
 	
 	glGenVertexArrays(1, &_VAO);
 	glGenBuffers(1, &_VBO);
@@ -37,7 +37,7 @@ dank_colored_square_renderer::dank_colored_square_renderer(float width, float he
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 dank_colored_square_renderer::~dank_colored_square_renderer() {
-
+	delete shader;
 }
 
 void dank_colored_square_renderer::submit(dank_colored_square* squares, int count) {
@@ -53,7 +53,7 @@ void dank_colored_square_renderer::submit(std::vector<dank_colored_square*> squa
 }
 
 void dank_colored_square_renderer::render() {
-	_shader.enable();
+	shader->enable();
 	glBindBuffer(GL_ARRAY_BUFFER, _VBO);
 	dank_vertex_colored* vertex = (dank_vertex_colored*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 
@@ -71,5 +71,9 @@ void dank_colored_square_renderer::render() {
 	glDrawElements(GL_TRIANGLES, _index_count, GL_UNSIGNED_INT, NULL);
 	_index_count = 0;
 	_squares.clear();
+}
+
+bool dank_colored_square_renderer::empty() {
+	return _squares.size() <= 0;
 }
 

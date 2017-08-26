@@ -18,11 +18,12 @@ private:
 	unsigned int	_index_count;
 	std::vector<dank_colored_square*> _squares;
 public:
-	dank_shader		_shader;
+	dank_shader*		shader;
 	dank_colored_square_renderer();
 	dank_colored_square_renderer(float width, float height);
 	~dank_colored_square_renderer();
 	void submit(dank_colored_square* square, int count);
 	void submit(std::vector<dank_colored_square*> sprites);
 	void render();
+	bool empty();
 };

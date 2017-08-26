@@ -13,6 +13,7 @@ private:
 public:
 	dank_chat_box();
 	dank_chat_box(float x, float y);
-	void render();
 	~dank_chat_box();
+	virtual void render();
+	virtual void submit();
 };

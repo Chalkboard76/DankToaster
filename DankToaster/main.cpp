@@ -38,22 +38,23 @@ int main() {
 
 	dank_texture_sheet sheet("Resources/Sheet2.png", 1, 1, .34);
 	dank_level level("Resources/Maps/test.map", sheet);
+	tiles.set_level(&level);
 
 	glClearColor(0, 0, 0, 1);
-
-	dank_mat4 view = translationMatrix(dank_vec3(0, 0, 0));
-	
-	renderer.shader->setUniformMat4("view", view);
-	for (int i = 0; i < level.tiles.size(); i++) {
-		tiles.add(level.tiles[i]);
-	}
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	while (window.open()) {
 		bar.increment(0.1);
-		if (window.keys[GLFW_KEY_0]) {
-			renderer.shader->enable();
-			view.elements[12] -= 0.1;
-			renderer.shader->setUniformMat4("view", view);
+		if (window.keys[GLFW_KEY_W]) {
+			tiles.scroll_up(0.01);
+		}
+		if (window.keys[GLFW_KEY_S]) {
+			tiles.scroll_down(0.01);
+		}
+		if (window.keys[GLFW_KEY_D]) {
+			tiles.scroll_right(0.01);
+		}
+		if (window.keys[GLFW_KEY_A]) {
+			tiles.scroll_left(0.01);
 		}
 		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
 			std::cout << window.cursor_x << ", " << window.cursor_y << std::endl;

@@ -1,25 +1,9 @@
 ﻿  main.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(30): error C2065: 'text_renderer': undeclared identifier
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(30): error C2228: left of '.load_font' must have class/struct/union
-  c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(30): note: type is 'unknown-type'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(31): error C2065: 'renderer': undeclared identifier
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(39): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(46): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(49): error C2065: 'renderer': undeclared identifier
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(49): error C2228: left of '.shader' must have class/struct/union
-  c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(49): note: type is 'unknown-type'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(49): error C2227: left of '->setUniformMat4' must point to class/struct/union/generic type
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(56): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(58): error C2065: 'renderer': undeclared identifier
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(58): error C2228: left of '.shader' must have class/struct/union
-  c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(58): note: type is 'unknown-type'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(58): error C2227: left of '->enable' must point to class/struct/union/generic type
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(59): warning C4305: '-=': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(60): error C2065: 'renderer': undeclared identifier
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(60): error C2228: left of '.shader' must have class/struct/union
-  c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(60): note: type is 'unknown-type'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(60): error C2227: left of '->setUniformMat4' must point to class/struct/union/generic type
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(75): error C2065: 'text_renderer': undeclared identifier
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(75): error C2228: left of '.render_text' must have class/struct/union
-  c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(75): note: type is 'unknown-type'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(39): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(46): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(48): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(51): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(54): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(57): warning C4305: 'argument': truncation from 'double' to 'float'
+  DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
+  DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

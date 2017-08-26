@@ -25,6 +25,7 @@ public:
 	~dank_bar();
 
 	void render();
+	virtual void submit();
 	void decrement(float value);
 	void increment(float value);
 };

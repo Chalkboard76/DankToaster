@@ -16,5 +16,6 @@ public:
 
 	void init();
 	void tick();
-	void render();
+	virtual void render();
+	virtual void submit();
 };

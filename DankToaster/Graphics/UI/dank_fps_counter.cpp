@@ -29,9 +29,10 @@ void dank_fps_counter::tick() {
 	}
 }
 
-/* Handles ticking of clock and mathematical calculation of fps.
-Then renders using the UI layers text renderer. */
 void dank_fps_counter::render() {
+}
+
+void dank_fps_counter::submit() {
 	tick();
 	text_renderer->render_text(fps.c_str(), 10, 10, 1, dank_vec3(1, 1, 0));
 }

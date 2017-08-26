@@ -32,7 +32,9 @@ public:
 	void add_square_renderer(dank_colored_square_renderer* renderer);
 	void add_text_renderer(dank_text_renderer* renderer);
 	virtual void render() {
+
 	}
 	virtual void submit() {
+
 	}
 };

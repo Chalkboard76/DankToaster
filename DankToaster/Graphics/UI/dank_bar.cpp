@@ -41,8 +41,10 @@ dank_bar::~dank_bar() {
 }
 
 void dank_bar::render() {
+}
+
+void dank_bar::submit() {
 	square_renderer->submit(squares);
-	square_renderer->render();
 }
 
 void dank_bar::decrement(float value) {

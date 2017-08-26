@@ -33,7 +33,8 @@ void dank_ui_layer::add(dank_widget* widget) {
 	_widgets.push_back(widget);
 }
 
-/* Calls each widget's render function. */
+/* Calls each widget's submit function. Each renderer (except for text for now)
+renders whatever was submitted to it.*/
 void dank_ui_layer::render() {
 	for (int i = 0; i < _widgets.size(); i++) {
 		_widgets[i]->submit();
@@ -41,6 +42,9 @@ void dank_ui_layer::render() {
 	if (_sprite_renderer->batch_count) {
 		_sprite_renderer->render();
 	}
-	if(_square_renderer.)
+	if (!_square_renderer->empty()) {
+		_square_renderer->render();
+	}
+	
 	
 }

@@ -62,14 +62,13 @@ void dank_batch_renderer::submit(dank_renderable* renderables, int count) {
 	}
 }
 
-void dank_batch_renderer::submit(std::vector<dank_sprite*> sprites) {
+void dank_batch_renderer::submit(std::vector<dank_sprite*>& sprites) {
 	for (int i = 0; i < sprites.size(); i++) {
-		dank_renderable r = *sprites[i];
 		for (int j = 0; j < 4; j++) {
 			if (j + 1 > batch_count) {
 				batch_count = j + 1;
 			}
-			if (batches[j].submit(r)) {
+			if (batches[j].submit(*sprites[i])) {
 				break;
 			}
 		}

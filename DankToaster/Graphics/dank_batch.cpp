@@ -9,7 +9,7 @@ dank_batch::dank_batch() {
 dank_batch::~dank_batch() {
 }
 
-int dank_batch::submit(dank_renderable renderable) {
+int dank_batch::submit(dank_renderable& renderable) {
 	unsigned int tex_ID = renderable.tex_ID;
 	if (map[tex_ID] == -1.0f) {
 		if (num_sheets >= 32) {

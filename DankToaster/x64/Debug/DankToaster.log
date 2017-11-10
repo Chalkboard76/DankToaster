@@ -1,9 +1,4 @@
 ﻿  main.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(39): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(46): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(48): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(51): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(54): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(57): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

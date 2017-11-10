@@ -15,7 +15,7 @@ struct dank_batch {
 	dank_batch();
 	~dank_batch();
 
-	int submit(dank_renderable renderable);
+	int submit(dank_renderable& renderable);
 	void clear();
 	bool empty();
 };

@@ -14,14 +14,17 @@
 #include "Graphics\Renderers\dank_colored_square_renderer.h"
 #include "Graphics\dank_colored_square.h"
 #include "Graphics\UI\dank_bar.h"
-#include "Graphics\UI\dank_chat_box.h"
+#include "Graphics\UI\Chat\dank_chat_box.h"
 #include "Game\dank_level.h"
 #include "Graphics\UI\dank_ui_layer.h"
 #include "Graphics\UI\dank_fps_counter.h"
+#include "Graphics\Renderers\dank_batch_renderer_3d.h"
 
 using namespace irrklang;
  
 int main() {
+#define D false
+#if D == true 
 	float width = 16.0f;
 	float height = 9.0f;
 	dank_window window(1024, 576, "Test Window");
@@ -39,7 +42,6 @@ int main() {
 	dank_texture_sheet sheet("Resources/Sheet2.png", 1, 1, .34);
 	dank_level level("Resources/Maps/test.map", sheet);
 	tiles.set_level(&level);
-
 	glClearColor(0, 0, 0, 1);
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	while (window.open()) {
@@ -67,4 +69,42 @@ int main() {
 	}
 
 	return 0;
+#endif
+#if !D
+	float width = 16.0f;
+	float height = 9.0f;
+	dank_window window(1024, 576, "Test Window");
+	ISoundEngine *SoundEngine = createIrrKlangDevice();
+	dank_batch_renderer_3D renderer(width, height);
+	dank_mat4 model = rotationMatrix(-55.0, dank_vec3(1.0f, 0.0, 0.0));
+	renderer.shader->setUniformMat4("model", model);
+	dank_mat4 view = translationMatrix(dank_vec3(0.0f, 0.0f, -3.0f));
+	renderer.shader->setUniformMat4("view", view);
+	dank_texture_sheet sheet("Resources/nyoung.png", 1, 1, 1);
+	dank_sprite sprite(-0.5f, 0.5f, 1.0f, 1.0f, *sheet.textures[0]);
+	glClearColor(0, 0, 0, 1);
+	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
+	float amount = 0.0f;
+	while (window.open()) {
+		if (window.keys[GLFW_KEY_W]) {
+			amount++;
+			model = rotationMatrix(-55.0 + amount, dank_vec3(1.0f, 0.0, 0.0));
+			renderer.shader->setUniformMat4("model", model);
+		}
+		if (window.keys[GLFW_KEY_S]) {
+		}
+		if (window.keys[GLFW_KEY_D]) {
+		}
+		if (window.keys[GLFW_KEY_A]) {
+		}
+		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
+		}
+		renderer.submit(&sprite, 1);
+		window.clear();
+		renderer.render();
+		window.update();
+	}
+
+	return 0;
+#endif
 }

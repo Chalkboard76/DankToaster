@@ -102,9 +102,6 @@
     <ClInclude Include="Graphics\UI\dank_bar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\UI\dank_chat_box.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Graphics\UI\dank_ui_layer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -112,6 +109,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Graphics\UI\dank_fps_counter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\UI\Chat\dank_chat_box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Renderers\dank_batch_renderer_3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -188,9 +191,6 @@
     <ClCompile Include="Graphics\UI\dank_bar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\UI\dank_chat_box.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Graphics\UI\dank_ui_layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -198,6 +198,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graphics\UI\dank_fps_counter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\UI\Chat\dank_chat_box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Renderers\dank_batch_renderer_3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -320,6 +326,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Resources\textboxbackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\nyoung.PNG">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

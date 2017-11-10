@@ -26,7 +26,7 @@ struct dank_batch_renderer : public dank_renderer {
 	dank_batch_renderer(float width, float height);
 	~dank_batch_renderer();
 	void submit(dank_renderable* renderables, int count);
-	void submit(std::vector<dank_sprite*> sprites);
+	void submit(std::vector<dank_sprite*>& sprites);
 	void render_batch(dank_batch& batch);
 	void render();
 };

@@ -22,6 +22,7 @@
     <ClInclude Include="Game\dank_level.h" />
     <ClInclude Include="Game\dank_tile.h" />
     <ClInclude Include="Graphics\dank_batch.h" />
+    <ClInclude Include="Graphics\Renderers\dank_batch_renderer_3d.h" />
     <ClInclude Include="Graphics\Renderers\dank_batch_renderer.h" />
     <ClInclude Include="Graphics\dank_character.h" />
     <ClInclude Include="Graphics\dank_colored_square.h" />
@@ -48,7 +49,7 @@
     <ClInclude Include="Math\dank_vec4.h" />
     <ClInclude Include="Math\Math.h" />
     <ClInclude Include="Graphics\UI\dank_bar.h" />
-    <ClInclude Include="Graphics\UI\dank_chat_box.h" />
+    <ClInclude Include="Graphics\UI\Chat\dank_chat_box.h" />
     <ClInclude Include="Utils\clock.h" />
     <ClInclude Include="Utils\file_utils.h" />
     <ClInclude Include="Utils\stb_image.h" />
@@ -57,6 +58,7 @@
     <ClCompile Include="Game\dank_level.cpp" />
     <ClCompile Include="Game\dank_tile.cpp" />
     <ClCompile Include="Graphics\dank_batch.cpp" />
+    <ClCompile Include="Graphics\Renderers\dank_batch_renderer_3D.cpp" />
     <ClCompile Include="Graphics\Renderers\dank_batch_renderer.cpp" />
     <ClCompile Include="Graphics\dank_colored_square.cpp" />
     <ClCompile Include="Graphics\Renderers\dank_colored_square_renderer.cpp" />
@@ -79,7 +81,7 @@
     <ClCompile Include="Math\dank_vec4.cpp" />
     <ClCompile Include="Math\Math.cpp" />
     <ClCompile Include="Graphics\UI\dank_bar.cpp" />
-    <ClCompile Include="Graphics\UI\dank_chat_box.cpp" />
+    <ClCompile Include="Graphics\UI\Chat\dank_chat_box.cpp" />
     <ClCompile Include="Utils\clock.cpp" />
     <ClCompile Include="Utils\file_utils.cpp" />
   </ItemGroup>
@@ -93,6 +95,7 @@
     <None Include="Shaders\textShader.vert" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resources\nyoung.PNG" />
     <Image Include="Resources\Sheet1.png" />
     <Image Include="Resources\Sheet2.png" />
     <Image Include="Resources\test\tex1.png" />

@@ -203,6 +203,26 @@ dank_mat4 rotationMatrix(float angleDegrees, dank_vec3& axis) {
 	return result;
 }
 
+
+dank_mat4 lookAt(dank_vec3& cameraPos, dank_vec3& targetPos, dank_vec3& worldUp) {
+	dank_vec3 direction = normalize(cameraPos - targetPos);
+	dank_vec3 cameraRight = normalize(cross(worldUp, direction));
+	dank_vec3 cameraUp = cross(direction, cameraRight);
+	float temp[] = {
+		cameraRight.x, cameraUp.x, direction.x, 0,
+		cameraRight.y, cameraUp.y, direction.y, 0,
+		cameraRight.z, cameraUp.z, direction.z, 0,
+		0.0f, 0.0f, 0.0f, 1};
+	float temp2[] = { 
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		-cameraPos.x, -cameraPos.y, -cameraPos.z, 1 };
+	dank_mat4 a(temp);
+	dank_mat4 b(temp2);
+	return a * b;
+}
+
 std::ostream& operator<<(std::ostream& os, dank_mat4& matrix) {
 	for (int i = 0; i < 4; i++) {
 		os <<

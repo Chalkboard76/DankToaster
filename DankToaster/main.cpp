@@ -78,28 +78,40 @@ int main() {
 	dank_batch_renderer_3D renderer(width, height);
 	dank_mat4 model = rotationMatrix(-90.0, dank_vec3(1.0f, 0.0, 0.0));
 	renderer.shader->setUniformMat4("model", model);
-	dank_mat4 view = translationMatrix(dank_vec3(0.0f, 0.0f, -3.0f));
-	renderer.shader->setUniformMat4("view", view);
 	dank_texture_sheet sheet("Resources/nyoung.png", 1, 1, 1);
 	dank_sprite sprite(-0.5f, -0.5f, 1.0f, 1.0f, *sheet.textures[0]);
+
+	dank_vec3 cameraPos(0.0f, 0.0f, 0.0f);
+	dank_vec3 cameraTarget(0.0f, 0.0f, 0.0f);
+	dank_vec3 up(0.0f, 1.0f, 0.0f);
+	dank_mat4 lookat = lookAt(cameraPos, cameraPos + cameraTarget, up);
+	renderer.shader->setUniformMat4("view", lookat);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0, 0, 0, 1);
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	float amount = 0.0f;
+	float cameraSpeed = 0.0005f;
 	while (window.open()) {
 		if (window.keys[GLFW_KEY_W]) {
-			amount++;
-			model = rotationMatrix(-90.0 + amount, dank_vec3(1.0f, 0.0, 0.0));
-			renderer.shader->setUniformMat4("model", model);
+			//cameraPos += cameraTarget * cameraSpeed;
 		}
 		if (window.keys[GLFW_KEY_S]) {
+			//cameraPos -= cameraTarget * cameraSpeed;
 		}
 		if (window.keys[GLFW_KEY_D]) {
+			//cameraPos += normalize(cross(cameraTarget, up)) * cameraSpeed;
 		}
 		if (window.keys[GLFW_KEY_A]) {
+			//cameraPos -= normalize(cross(cameraTarget, up)) * cameraSpeed;
 		}
 		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
+			amount++;
+			model = rotationMatrix(-90.0 + amount, dank_vec3(1.0f, 0.0, 0.0));
 		}
+
+		renderer.shader->setUniformMat4("model", model);
+		//renderer.shader->setUniformMat4("view", lookAt(cameraPos, cameraPos + cameraTarget, up));
+
 		renderer.submit(&sprite, 1);
 		window.clear();
 		renderer.render();

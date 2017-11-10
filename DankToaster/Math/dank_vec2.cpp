@@ -108,6 +108,11 @@ dank_vec2& dank_vec2::operator/=(const dank_vec2& vector) {
 	return divide(vector);
 }
 
+dank_vec2& normalize(const dank_vec2& vector) {
+	float magnitude = (vector.x * vector.x) + (vector.y * vector.y);
+	return dank_vec2(vector.x / magnitude, vector.y / magnitude);
+}
+
 bool dank_vec2::operator==(const dank_vec2& v) {
 	return (x == v.x) && (y == v.y);
 }

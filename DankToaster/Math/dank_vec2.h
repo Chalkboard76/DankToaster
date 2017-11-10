@@ -39,6 +39,8 @@ struct dank_vec2 {
 	dank_vec2& operator*=(const dank_vec2& vector);
 	dank_vec2& operator/=(const dank_vec2& vector);
 
+	friend dank_vec2& normalize(const dank_vec2& vector);
+
 	bool operator==(const dank_vec2& vector);
 	bool operator!=(const dank_vec2& vector);
 

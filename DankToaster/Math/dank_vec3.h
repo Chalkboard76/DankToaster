@@ -39,6 +39,9 @@ struct dank_vec3 {
 	dank_vec3& operator*=(const dank_vec3& vector);
 	dank_vec3& operator/=(const dank_vec3& vector);
 
+	friend dank_vec3& normalize(const dank_vec3& vector);
+	friend dank_vec3& cross(const dank_vec3& a, const dank_vec3& b);
+
 	bool operator==(const dank_vec3& v);
 	bool operator!=(const dank_vec3& v);
 

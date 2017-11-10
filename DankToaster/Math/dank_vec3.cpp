@@ -118,6 +118,17 @@ dank_vec3& dank_vec3::operator/=(const dank_vec3& vector) {
 	return divide(vector);
 }
 
+dank_vec3& normalize(const dank_vec3& vector) {
+	float magnitude = (vector.x * vector.x) + (vector.y * vector.y) + (vector.z * vector.z);
+	return dank_vec3(vector.x / magnitude, vector.y / magnitude, vector.z / magnitude);
+}
+
+dank_vec3& cross(const dank_vec3& a, const dank_vec3& b) {
+	return dank_vec3(	a.y*b.z - a.z*b.y,
+						a.z*b.x - a.x*b.z,
+						a.x*b.y - a.y*b.x);
+}
+
 bool dank_vec3::operator==(const dank_vec3& v) {
 	return (x == v.x) && (y == v.y) && (z == v.z);
 }

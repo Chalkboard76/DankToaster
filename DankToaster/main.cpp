@@ -76,19 +76,20 @@ int main() {
 	dank_window window(1024, 576, "Test Window");
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
 	dank_batch_renderer_3D renderer(width, height);
-	dank_mat4 model = rotationMatrix(-55.0, dank_vec3(1.0f, 0.0, 0.0));
+	dank_mat4 model = rotationMatrix(-90.0, dank_vec3(1.0f, 0.0, 0.0));
 	renderer.shader->setUniformMat4("model", model);
 	dank_mat4 view = translationMatrix(dank_vec3(0.0f, 0.0f, -3.0f));
 	renderer.shader->setUniformMat4("view", view);
 	dank_texture_sheet sheet("Resources/nyoung.png", 1, 1, 1);
-	dank_sprite sprite(-0.5f, 0.5f, 1.0f, 1.0f, *sheet.textures[0]);
+	dank_sprite sprite(-0.5f, -0.5f, 1.0f, 1.0f, *sheet.textures[0]);
+	glEnable(GL_DEPTH_TEST);
 	glClearColor(0, 0, 0, 1);
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	float amount = 0.0f;
 	while (window.open()) {
 		if (window.keys[GLFW_KEY_W]) {
 			amount++;
-			model = rotationMatrix(-55.0 + amount, dank_vec3(1.0f, 0.0, 0.0));
+			model = rotationMatrix(-90.0 + amount, dank_vec3(1.0f, 0.0, 0.0));
 			renderer.shader->setUniformMat4("model", model);
 		}
 		if (window.keys[GLFW_KEY_S]) {

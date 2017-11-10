@@ -1,4 +1,7 @@
 ﻿  main.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\main.cpp(92): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  dank_window.cpp
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

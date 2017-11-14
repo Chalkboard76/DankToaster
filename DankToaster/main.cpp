@@ -76,13 +76,13 @@ int main() {
 	dank_window window(1024, 576, "Test Window");
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
 	dank_batch_renderer_3D renderer(width, height);
-	dank_mat4 model = rotationMatrix(-90.0, dank_vec3(1.0f, 0.0, 0.0));
+	dank_mat4 model = rotationMatrix(0.0, dank_vec3(1.0f, 0.0, 0.0));
 	renderer.shader->setUniformMat4("model", model);
 	dank_texture_sheet sheet("Resources/nyoung.png", 1, 1, 1);
 	dank_sprite sprite(-0.5f, -0.5f, 1.0f, 1.0f, *sheet.textures[0]);
 
-	dank_vec3 cameraPos(0.0f, 0.0f, 0.0f);
-	dank_vec3 cameraTarget(0.0f, 0.0f, 0.0f);
+	dank_vec3 cameraPos(0.0f, 0.0f, 3.0f);
+	dank_vec3 cameraTarget(0.0f, 0.0f, -1.0f);
 	dank_vec3 up(0.0f, 1.0f, 0.0f);
 	dank_mat4 lookat = lookAt(cameraPos, cameraPos + cameraTarget, up);
 	renderer.shader->setUniformMat4("view", lookat);
@@ -90,27 +90,34 @@ int main() {
 	glClearColor(0, 0, 0, 1);
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	float amount = 0.0f;
-	float cameraSpeed = 0.0005f;
+	float cameraSpeed = 0.5f;
+	float delta_time = 0.0f;
+	float curr_time = 0.0f;
+	float last_time = 0.0f;
+	dank_vec3 mult;
 	while (window.open()) {
+		curr_time = glfwGetTime();
+		delta_time = curr_time - last_time;
+		last_time = curr_time;
+		cameraSpeed = 2.5f * delta_time;
 		if (window.keys[GLFW_KEY_W]) {
-			//cameraPos += cameraTarget * cameraSpeed;
+			cameraPos += cameraTarget * cameraSpeed;
 		}
 		if (window.keys[GLFW_KEY_S]) {
-			//cameraPos -= cameraTarget * cameraSpeed;
+			cameraPos -= cameraTarget * cameraSpeed;
 		}
 		if (window.keys[GLFW_KEY_D]) {
-			//cameraPos += normalize(cross(cameraTarget, up)) * cameraSpeed;
+			cameraPos += normalize(cross(cameraTarget, up)) * cameraSpeed;
 		}
 		if (window.keys[GLFW_KEY_A]) {
-			//cameraPos -= normalize(cross(cameraTarget, up)) * cameraSpeed;
+			cameraPos -= normalize(cross(cameraTarget, up)) * cameraSpeed;
 		}
 		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
 			amount++;
-			model = rotationMatrix(-90.0 + amount, dank_vec3(1.0f, 0.0, 0.0));
+			model = rotationMatrix(amount, dank_vec3(1.0f, 0.0, 0.0));
 		}
-
 		renderer.shader->setUniformMat4("model", model);
-		//renderer.shader->setUniformMat4("view", lookAt(cameraPos, cameraPos + cameraTarget, up));
+		renderer.shader->setUniformMat4("view", lookAt(cameraPos, cameraPos + cameraTarget, up));
 
 		renderer.submit(&sprite, 1);
 		window.clear();

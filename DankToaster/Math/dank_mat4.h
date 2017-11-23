@@ -40,4 +40,5 @@ struct dank_mat4 {
 	friend dank_mat4 translationMatrix(const dank_vec3& vector);
 	friend dank_mat4 rotationMatrix(float angleDegrees, dank_vec3& axis);
 	friend dank_mat4 lookAt(dank_vec3& cameraPos, dank_vec3& targetPos, dank_vec3& worldUp);
+	friend dank_mat4 lookAt(dank_vec3& position, dank_vec3& front, dank_vec3& right, dank_vec3& up);
 };

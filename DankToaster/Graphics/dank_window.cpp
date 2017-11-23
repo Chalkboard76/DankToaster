@@ -31,12 +31,63 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 	dank_window* win = (dank_window*)glfwGetWindowUserPointer(window);
 	win->mouse[button] = action != GLFW_RELEASE;
 }
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	if (fov >= 1.0f && fov <= 45.0f)
+		fov -= yoffset;
+	if (fov <= 1.0f)
+		fov = 1.0f;
+	if (fov >= 45.0f)
+		fov = 45.0f;
+}
 dank_window::dank_window(const int width, const int height, const char* title) {
 	glfwSetErrorCallback(error_callback);
 
 	_width = width;
 	_height = height;
 	_title = title;
+
+	for (int i = 0; i < MAX_KEYS; i++) {
+		keys[i] = false;
+	}
+
+	if (!glfwInit()) {
+		printf("%s\n", "GLFW failed to initialize.");
+		glfwTerminate();
+	}
+
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+	_window = glfwCreateWindow(_width, _height, _title, NULL, NULL);
+	if (!_window)
+	{
+		printf("%s\n", "GLFW failed to create a the dank_window.");
+		glfwTerminate();
+	}
+
+	glfwMakeContextCurrent(_window);
+	glfwSetWindowUserPointer(_window, this);
+	glfwSetWindowSizeCallback(_window, resize_callback);
+	glfwSetCharCallback(_window, character_callback);
+	glfwSetKeyCallback(_window, key_callback);
+	glfwSetCursorPosCallback(_window, cursor_position_callback);
+	glfwSetMouseButtonCallback(_window, mouse_button_callback);
+
+	if (glewInit() != GLEW_OK) {
+		printf("%s\n", "Failed to initialize GLEW.");
+		glfwTerminate();
+	}
+}
+
+dank_window::dank_window(const int width, const int height, const char* title, dank_camera* camera) {
+	glfwSetErrorCallback(error_callback);
+
+	_width = width;
+	_height = height;
+	_title = title;
+	_camera = camera;
 
 	for (int i = 0; i < MAX_KEYS; i++) {
 		keys[i] = false;

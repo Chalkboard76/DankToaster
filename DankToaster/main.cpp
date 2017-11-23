@@ -81,6 +81,35 @@ int main() {
 	dank_texture_sheet sheet("Resources/nyoung.png", 1, 1, 1);
 	dank_sprite sprite(-0.5f, -0.5f, 1.0f, 1.0f, *sheet.textures[0]);
 
+
+	dank_vec3 direction;
+	direction.y = sin(toRadians(pitch)) * cos(toRadians(yaw));
+	direction.x = sin(pitch);
+	direction.z = cos(toRadians(pitch)) * sin(toRadians(yaw));
+	glfwSetInputMode(window.getWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+	int lastx, lasty = window.getWidth() / 2, window.getHeight() / 2;
+	float xoffset = xpos - lastx;
+	float yoffset = ypos - lasty;
+
+	float sensitivity = 0.05f;
+	xoffset *= sensitivity;
+	yoffset *= sensitivity;
+
+	yaw += xoffset;
+	pitch += yoffset;
+
+	if (pitch > 89.0f)
+		pitch = 89.0f;
+	if (pitch < -89.0f)
+		pitch = -89.0f;
+
+	dank_vec3 front;
+	front.x = cos(toRadians(pitch)) * cos(toRadians(yaw));
+	front.y = sin(toRadians(pitch));
+	front.z = cos(toRadians(pitch)) * sin(toRadians(yaw));
+	dank_vec3 cameraFront = normalize(front);
+
 	dank_vec3 cameraPos(0.0f, 0.0f, 3.0f);
 	dank_vec3 cameraTarget(0.0f, 0.0f, -1.0f);
 	dank_vec3 up(0.0f, 1.0f, 0.0f);

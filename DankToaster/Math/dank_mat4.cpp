@@ -204,9 +204,9 @@ dank_mat4 rotationMatrix(float angleDegrees, dank_vec3& axis) {
 }
 
 
-dank_mat4 lookAt(dank_vec3& cameraPos, dank_vec3& targetPos, dank_vec3& worldUp) {
+dank_mat4 lookAt(dank_vec3& cameraPos, dank_vec3& targetPos, dank_vec3& up) {
 	dank_vec3 direction = normalize(cameraPos - targetPos);
-	dank_vec3 cameraRight = normalize(cross(worldUp, direction));
+	dank_vec3 cameraRight = normalize(cross(up, direction));
 	dank_vec3 cameraUp = cross(direction, cameraRight);
 	float temp[] = {
 		cameraRight.x, cameraUp.x, direction.x, 0,
@@ -218,6 +218,22 @@ dank_mat4 lookAt(dank_vec3& cameraPos, dank_vec3& targetPos, dank_vec3& worldUp)
 		0.0f, 1.0f, 0.0f, 0.0f,
 		0.0f, 0.0f, 1.0f, 0.0f,
 		-cameraPos.x, -cameraPos.y, -cameraPos.z, 1 };
+	dank_mat4 a(temp);
+	dank_mat4 b(temp2);
+	return a * b;
+}
+
+dank_mat4 lookAt(dank_vec3& position, dank_vec3& front, dank_vec3& right, dank_vec3& up) {
+	float temp[] = {
+		right.x, up.x, front.x, 0,
+		right.y, up.y, front.y, 0,
+		right.z, up.z, front.z, 0,
+		0.0f, 0.0f, 0.0f, 1 };
+	float temp2[] = {
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		-position.x, -position.y, -position.z, 1 };
 	dank_mat4 a(temp);
 	dank_mat4 b(temp2);
 	return a * b;

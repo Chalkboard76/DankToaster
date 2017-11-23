@@ -11,8 +11,8 @@ private:
 	GLFWwindow* _window;
 	const static int MAX_KEYS = 500;
 	const static int MAX_MOUSE_BUTTONS = 20;
-	dank_camera* _camera;
 public:
+	dank_camera* _camera;
 	bool keys[MAX_KEYS];
 	bool mouse[MAX_MOUSE_BUTTONS];
 	double cursor_x;

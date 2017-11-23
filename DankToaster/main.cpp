@@ -73,48 +73,25 @@ int main() {
 #if !D
 	float width = 16.0f;
 	float height = 9.0f;
-	dank_window window(1024, 576, "Test Window");
+	dank_camera camera(dank_vec3(0.0f, 0.0f, 3.0f), dank_vec3(0.0f, 1.0f, 0.0f));
+	dank_window window(1024, 576, "Test Window", &camera);
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
-	dank_batch_renderer_3D renderer(width, height);
+
+	dank_shader* shader = new dank_shader("Shaders/spriteShader.vert", "Shaders/spriteShader.frag");
+	shader->enable();
+	int texIndices[32] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 };
+	shader->setUniform1v("our_textures", texIndices, 32);
+
 	dank_mat4 model = rotationMatrix(0.0, dank_vec3(1.0f, 0.0, 0.0));
-	renderer.shader->setUniformMat4("model", model);
+	shader->setUniformMat4("model", model);
+	dank_mat4 projection = perspective(45.0f, width / height, 0.1f, 100.0f);
+	shader->setUniformMat4("projection", projection);
+	shader->setUniformMat4("view", camera.get_view_matrix());
+
+	dank_batch_renderer_3D renderer(shader);
 	dank_texture_sheet sheet("Resources/nyoung.png", 1, 1, 1);
 	dank_sprite sprite(-0.5f, -0.5f, 1.0f, 1.0f, *sheet.textures[0]);
 
-
-	dank_vec3 direction;
-	direction.y = sin(toRadians(pitch)) * cos(toRadians(yaw));
-	direction.x = sin(pitch);
-	direction.z = cos(toRadians(pitch)) * sin(toRadians(yaw));
-	glfwSetInputMode(window.getWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-	int lastx, lasty = window.getWidth() / 2, window.getHeight() / 2;
-	float xoffset = xpos - lastx;
-	float yoffset = ypos - lasty;
-
-	float sensitivity = 0.05f;
-	xoffset *= sensitivity;
-	yoffset *= sensitivity;
-
-	yaw += xoffset;
-	pitch += yoffset;
-
-	if (pitch > 89.0f)
-		pitch = 89.0f;
-	if (pitch < -89.0f)
-		pitch = -89.0f;
-
-	dank_vec3 front;
-	front.x = cos(toRadians(pitch)) * cos(toRadians(yaw));
-	front.y = sin(toRadians(pitch));
-	front.z = cos(toRadians(pitch)) * sin(toRadians(yaw));
-	dank_vec3 cameraFront = normalize(front);
-
-	dank_vec3 cameraPos(0.0f, 0.0f, 3.0f);
-	dank_vec3 cameraTarget(0.0f, 0.0f, -1.0f);
-	dank_vec3 up(0.0f, 1.0f, 0.0f);
-	dank_mat4 lookat = lookAt(cameraPos, cameraPos + cameraTarget, up);
-	renderer.shader->setUniformMat4("view", lookat);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0, 0, 0, 1);
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
@@ -127,27 +104,27 @@ int main() {
 	while (window.open()) {
 		curr_time = glfwGetTime();
 		delta_time = curr_time - last_time;
+		camera.deltatime = delta_time;
 		last_time = curr_time;
-		cameraSpeed = 2.5f * delta_time;
 		if (window.keys[GLFW_KEY_W]) {
-			cameraPos += cameraTarget * cameraSpeed;
+			camera.process_keyboard_input(FORWARD);
 		}
 		if (window.keys[GLFW_KEY_S]) {
-			cameraPos -= cameraTarget * cameraSpeed;
+			camera.process_keyboard_input(BACKWARD);
 		}
 		if (window.keys[GLFW_KEY_D]) {
-			cameraPos += normalize(cross(cameraTarget, up)) * cameraSpeed;
+			camera.process_keyboard_input(LEFT);
 		}
 		if (window.keys[GLFW_KEY_A]) {
-			cameraPos -= normalize(cross(cameraTarget, up)) * cameraSpeed;
+			camera.process_keyboard_input(RIGHT);
 		}
 		if (window.mouse[GLFW_MOUSE_BUTTON_LEFT]) {
 			amount++;
 			model = rotationMatrix(amount, dank_vec3(1.0f, 0.0, 0.0));
 		}
 		renderer.shader->setUniformMat4("model", model);
-		renderer.shader->setUniformMat4("view", lookAt(cameraPos, cameraPos + cameraTarget, up));
-
+		renderer.shader->setUniformMat4("view", camera.get_view_matrix());
+		renderer.shader->setUniformMat4("projection", perspective(camera._zoom, width / height, 0.1f, 100.0f));
 		renderer.submit(&sprite, 1);
 		window.clear();
 		renderer.render();

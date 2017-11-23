@@ -22,6 +22,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 {
 	dank_window* win = (dank_window*) glfwGetWindowUserPointer(window);
+	float xoffset = win->cursor_x - xpos;
+	float yoffset = ypos - win->cursor_y;
+
+	win->_camera->process_mouse_movement(xoffset, yoffset);
+
 	win->cursor_x = xpos;
 	win->cursor_y = ypos;
 }
@@ -34,12 +39,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
-	if (fov >= 1.0f && fov <= 45.0f)
-		fov -= yoffset;
-	if (fov <= 1.0f)
-		fov = 1.0f;
-	if (fov >= 45.0f)
-		fov = 45.0f;
+
 }
 dank_window::dank_window(const int width, const int height, const char* title) {
 	glfwSetErrorCallback(error_callback);

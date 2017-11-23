@@ -23,7 +23,7 @@ struct dank_batch_renderer_3D : public dank_renderer {
 	dank_mat4		view;
 
 	dank_batch_renderer_3D();
-	dank_batch_renderer_3D(float width, float height);
+	dank_batch_renderer_3D(dank_shader* shader);
 	~dank_batch_renderer_3D();
 	void submit(dank_renderable* renderables, int count);
 	void submit(std::vector<dank_sprite*>& sprites);

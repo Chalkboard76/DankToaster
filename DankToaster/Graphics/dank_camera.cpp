@@ -23,7 +23,6 @@ void dank_camera::update_camera_vectors() {
 
 void dank_camera::process_keyboard_input(camera_movement dir) {
 	float _relative_speed = _speed * deltatime;
-	std::cout << deltatime << std::endl;
 	if (dir == FORWARD) {
 		_position -= _front * _relative_speed ;
 	}
@@ -45,11 +44,11 @@ void dank_camera::process_mouse_movement(float xoffset, float yoffset) {
 	_yaw += xoffset;
 	_pitch += yoffset;
 
-	if (_pitch > 89.0f) {
-		_pitch = 89.0f;
+	if (_pitch > 1.55334) {
+		_pitch = 1.55334;
 	}
-	if (_pitch < -89.0f) {
-		_pitch = -89.0f;
+	if (_pitch < -1.55334) {
+		_pitch = -1.55334;
 	}
 
 	update_camera_vectors();

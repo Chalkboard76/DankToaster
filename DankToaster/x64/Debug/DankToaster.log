@@ -1,4 +1,8 @@
-﻿  dank_camera.cpp
-c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_camera.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+﻿  dank_window.cpp
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_window.cpp(30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\jacob\files\projects\danktoaster\danktoaster\graphics\dank_window.cpp(31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.exe
   DankToaster.vcxproj -> C:\Users\Jacob\files\Projects\DankToaster\x64\Debug\DankToaster.pdb (Partial PDB)

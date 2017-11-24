@@ -28,6 +28,6 @@ public:
 	void load_font(std::string font, int font_size);
 	void generate_label(dank_label* label, std::string text, int x, int y, int z, int scale, dank_vec4 color);
 	void render_label(dank_label label);
-	void render_text(std::string text, int x, int y, int scale, dank_vec3 color);
+	void render_text(std::string text, int x, int y, float scale, dank_vec3 color);
 
 };

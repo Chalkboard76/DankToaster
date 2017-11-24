@@ -81,11 +81,11 @@ void dank_text_renderer::generate_label(dank_label* label, std::string text, int
 	}
 }
 
-void render_label(dank_label label) {
+void dank_text_renderer::render_label(dank_label label) {
 
 }
 
-void dank_text_renderer::render_text(std::string text, int x, int y, int scale, dank_vec3 color) {
+void dank_text_renderer::render_text(std::string text, int x, int y, float scale, dank_vec3 color) {
 	shader->enable();
 	shader->setUniform3f("textColor", color);
 	glBindVertexArray(_VAO);

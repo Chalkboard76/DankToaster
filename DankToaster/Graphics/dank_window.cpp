@@ -22,8 +22,13 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 {
 	dank_window* win = (dank_window*) glfwGetWindowUserPointer(window);
+	if (win->_first_mouse) {
+		win->cursor_x = xpos;
+		win->cursor_y = ypos;
+		win->_first_mouse = false;
+	}
 	float xoffset = win->cursor_x - xpos;
-	float yoffset = ypos - win->cursor_y;
+	float yoffset = win->cursor_y - ypos;
 
 	win->_camera->process_mouse_movement(xoffset, yoffset);
 
@@ -47,6 +52,7 @@ dank_window::dank_window(const int width, const int height, const char* title) {
 	_width = width;
 	_height = height;
 	_title = title;
+	_first_mouse = true;
 
 	for (int i = 0; i < MAX_KEYS; i++) {
 		keys[i] = false;
@@ -88,6 +94,8 @@ dank_window::dank_window(const int width, const int height, const char* title, d
 	_height = height;
 	_title = title;
 	_camera = camera;
+
+	_first_mouse = true;
 
 	for (int i = 0; i < MAX_KEYS; i++) {
 		keys[i] = false;

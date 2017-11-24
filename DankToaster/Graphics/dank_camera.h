@@ -4,7 +4,7 @@
 #include "Math\dank_mat4.h"
 
 static const float PITCH = 0.0f;
-static const float YAW = -90.0f;
+static const float YAW = -toRadians(90.0f);
 static const float SPEED = 10.0f;
 static const float SENSITIVITY = 0.01f;
 static const float ZOOM = 45.0f;
@@ -18,7 +18,6 @@ enum camera_movement {
 
 class dank_camera {
 private:
-	float _pitch, _yaw;
 	float _speed;
 	float _mouse_sensitivity;
 	dank_vec3 _position;
@@ -27,6 +26,7 @@ private:
 	dank_vec3 _front;
 	dank_vec3 _world_up;
 public:
+	float _pitch, _yaw;
 	float _zoom;
 	double deltatime;
 	dank_camera(dank_vec3 position, dank_vec3 up);

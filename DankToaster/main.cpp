@@ -73,7 +73,7 @@ int main() {
 #if !D
 	float width = 16.0f;
 	float height = 9.0f;
-	dank_camera camera(dank_vec3(0.0f, 0.0f, 3.0f), dank_vec3(0.0f, 1.0f, 0.0f));
+	dank_camera camera(dank_vec3(0.0f, 0.0f, -3.0f), dank_vec3(0.0f, 1.0f, 0.0f));
 	dank_window window(1024, 576, "Test Window", &camera);
 	ISoundEngine *SoundEngine = createIrrKlangDevice();
 
@@ -82,7 +82,7 @@ int main() {
 	int texIndices[32] = { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 };
 	shader->setUniform1v("our_textures", texIndices, 32);
 
-	dank_mat4 model = rotationMatrix(0.0, dank_vec3(1.0f, 0.0, 0.0));
+	dank_mat4 model = rotationMatrix(45.0, dank_vec3(0.0f, 0.0f, 1.0f));
 	shader->setUniformMat4("model", model);
 	dank_mat4 projection = perspective(45.0f, width / height, 0.1f, 100.0f);
 	shader->setUniformMat4("projection", projection);
@@ -94,12 +94,18 @@ int main() {
 
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0, 0, 0, 1);
+	glfwSetInputMode(window.getWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
 	//SoundEngine->play2D("Resources/icecream.mp3", GL_TRUE);
 	float amount = 0.0f;
 	float cameraSpeed = 0.5f;
 	float delta_time = 0.0f;
 	float curr_time = 0.0f;
 	float last_time = 0.0f;
+
+	dank_text_renderer text_renderer(1380, 870);
+	text_renderer.load_font("Resources/fonts/consola.ttf", 25);
+
 	dank_vec3 mult;
 	while (window.open()) {
 		curr_time = glfwGetTime();
@@ -122,12 +128,15 @@ int main() {
 			amount++;
 			model = rotationMatrix(amount, dank_vec3(1.0f, 0.0, 0.0));
 		}
+		shader->enable();
 		renderer.shader->setUniformMat4("model", model);
 		renderer.shader->setUniformMat4("view", camera.get_view_matrix());
 		renderer.shader->setUniformMat4("projection", perspective(camera._zoom, width / height, 0.1f, 100.0f));
 		renderer.submit(&sprite, 1);
 		window.clear();
 		renderer.render();
+		text_renderer.render_text("Pitch: " + std::to_string(camera._pitch), 2, 2, 1, dank_vec3(1.0f, 0.0f, 1.0f));
+		text_renderer.render_text("Yaw: " + std::to_string(camera._yaw), 2, 22, 1, dank_vec3(1.0f, 0.0f, 1.0f));
 		window.update();
 	}
 
